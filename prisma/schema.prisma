@@ -1,3 +1,4 @@
+// Database schema for Vinícius Andrade Portfolio database
 datasource db {
   provider = "postgresql"
 }
