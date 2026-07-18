@@ -1,0 +1,260 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "certifications": "Certifications",
+    "github": "GitHub",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, my name is",
+    "headline": "Transforming ideas into modern, scalable, and high-performance applications.",
+    "subheadline": "Full Stack Developer specialized in JavaScript, TypeScript, Node.js, React, Next.js, PostgreSQL, MongoDB, Docker, REST APIs, Cloud Computing, and Artificial Intelligence.",
+    "viewProjects": "View Projects",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "My Trajectory",
+    "intro": "My journey in technology is marked by determination, adaptability, and a passion for solving complex problems.",
+    "paragraph1": "I am a former military police officer, a profession that taught me discipline, working under intense pressure, ethics, and resilience. I decided to pursue my true passion: Software Engineering. Today, I am an Information Systems Analysis and Development student working as a Full Stack Developer.",
+    "paragraph2": "My foundation in technology began in IT support and infrastructure at Stefanini and Flanay Informática, where I acquired deep practical knowledge in networking, servers, and hardware troubleshooting. I am self-taught and highly adaptable, quickly integrating artificial intelligence and cloud computing innovations into my daily development workflow.",
+    "timelineTitle": "Timeline",
+    "events": [
+      {
+        "year": "2018 - 2021",
+        "title": "Public Security & Discipline",
+        "description": "Served as a Military Police Officer. Developed strong emotional intelligence, teamwork skills, and critical decision-making under high-stress scenarios."
+      },
+      {
+        "year": "2021 - 2023",
+        "title": "IT Support & Infrastructure (Stefanini / Flanay)",
+        "description": "Contractor at the Federal Justice. Handled OS administration, advanced hardware troubleshooting, networking management, and local server maintenance."
+      },
+      {
+        "year": "2023 - Present",
+        "title": "Lisboa Informática & ADS",
+        "description": "Providing IT consulting and developing tailored business software. Started ADS degree. Fully focused on Full Stack development, clean architecture, and DevOps."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Technologies",
+    "subtitle": "My Technical Stack",
+    "level": "Proficiency",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Databases",
+      "cloud": "Cloud",
+      "devops": "DevOps & Tools"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Real Cases of Software Engineering",
+    "problem": "Problem",
+    "solution": "Solution",
+    "architecture": "Architecture",
+    "challenges": "Challenges",
+    "results": "Results",
+    "demo": "Live Demo",
+    "code": "Source Code",
+    "active": "Online",
+    "list": [
+      {
+        "id": "ubs",
+        "name": "PSF Digital (UBS)",
+        "tagline": "Basic Health Unit Management System",
+        "description": "A comprehensive enterprise-grade platform to manage scheduling, doctor rosters, and patient records in public health units (UBS). Features role-based access control (RBAC) and full Brazilian general data protection regulation (LGPD) compliance.",
+        "problemText": "Public clinics face massive bottlenecks in patient scheduling, unorganized waiting lists, risk of sensitive medical data leaks, and difficulty integrating records across clinical sites (Multi-Tenant).",
+        "solutionText": "Developed a Multi-Tenant Next.js web application using a PostgreSQL database. Implemented secure multi-tenant isolation, encrypting sensitive fields, and enforcing strict RBAC layers to restrict data access dynamically.",
+        "architectureText": "Next.js (App Router), Node.js API backend, Prisma ORM for efficient PostgreSQL transactions. Caching and message queues via Redis, and complete environment containerization with Docker.",
+        "challengesText": "Ensuring strict LGPD compliance for electronic medical records and preventing double-booking scheduling conflicts when multiple receptionists transact at the exact same millisecond.",
+        "resultsText": "Reduced patient booking wait times by 45%, achieved 100% auditability of file accesses, and guaranteed legal compliance across clinics."
+      },
+      {
+        "id": "warehouse",
+        "name": "Warehouse Management System",
+        "tagline": "Inventory and Influx Tracking Control",
+        "description": "A robust business inventory application to track item entries, exits, stock alerts, complete with interactive analytical dashboards and real-time reports.",
+        "problemText": "Lack of real-time control over warehouse items, financial losses due to expired goods, and slow manual reporting processes prone to human error.",
+        "solutionText": "Created a reactive inventory app featuring secure JWT sessions, structured stock transaction logging, and automated low-stock warnings.",
+        "architectureText": "Next.js frontend and Server Actions, MongoDB database for schema-less item versatility, and rich interactive analytical graphics via Recharts.",
+        "challengesText": "Synchronizing stock calculations across separate physical warehouse warehouses and generating heavy interactive charts without degrading browser UI responsiveness.",
+        "resultsText": "Eliminated inventory data discrepancies by 98%, automated item replenishment triggers, and deployed a live demo with test login details."
+      },
+      {
+        "id": "api-rest",
+        "name": "Modular REST API",
+        "tagline": "Scalable and Well-Documented Backend Services",
+        "description": "RESTful API built with high concurrency in mind, secure routing using JWT, and fully interactive OpenAPI/Swagger documentation.",
+        "problemText": "Need for a centralized authentication and resource microservice to serve web and mobile apps with low latency, robust validation, and high security standards.",
+        "solutionText": "Engineered a clean Express API using MongoDB, applying modern Design Patterns, structured routing, global error middleware, and strict request schema validations.",
+        "architectureText": "Node.js with Express, TypeScript for static type safety, MongoDB + Mongoose ODM, JWT for stateless sessions, and Swagger UI for documentation.",
+        "challengesText": "Implementing a secure JWT workflow with rotating Refresh Tokens and setting up mock testing suites to assert reliable service coverage.",
+        "resultsText": "Achieved average API response times below 40ms, 90% unit test coverage, and enabled seamless onboarding for external teams via live Swagger documentation."
+      }
+    ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My Professional Journey",
+    "list": [
+      {
+        "company": "Lisboa Informática",
+        "role": "IT Consultant & Software Developer",
+        "period": "2023 - Present",
+        "description": "Developing customized software solutions, deploying ERP suites, building third-party API integrations, and managing server infrastructure. Specialized in Full Stack JavaScript/TypeScript."
+      },
+      {
+        "company": "Stefanini",
+        "role": "Contractor / IT Specialist at Federal Justice",
+        "period": "2022 - 2023",
+        "description": "Provided advanced support for Federal Court technological infrastructure. Managed local networks, active directories, hardware repairs, and end-user configurations."
+      },
+      {
+        "company": "Flanay Informática",
+        "role": "IT & Network Technician",
+        "period": "2021 - 2022",
+        "description": "Performed hardware assembly and troubleshooting, and installed physical networking systems including structured cabling and enterprise Wi-Fi networks."
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "My Credentials and Achievements",
+    "viewOnCredly": "Verify on Credly",
+    "list": [
+      {
+        "name": "Build a Secure Google Cloud Network",
+        "issuer": "Google Cloud",
+        "date": "2026",
+        "id": "gcp-secure-network",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Set Up an App Dev Environment on Google Cloud",
+        "issuer": "Google Cloud",
+        "date": "2026",
+        "id": "gcp-app-dev",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Implement Load Balancing on Compute Engine",
+        "issuer": "Google Cloud",
+        "date": "2026",
+        "id": "gcp-load-balancing",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "ISC2 Candidate",
+        "issuer": "ISC2",
+        "date": "2026",
+        "id": "isc2-candidate",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "C++ Essentials 1",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-cpp-essentials",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Networking Basics",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-networking-basics",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Python Essentials 1",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-python-essentials",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "AI for Networking",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-ai-networking",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Enhancing Cisco Security Solutions with Data Analytics",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-security-data-analytics",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Network Technician Career Path",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-network-technician",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Introduction to Cybersecurity",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-intro-cybersecurity",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Ethical Hacker",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-ethical-hacker",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      },
+      {
+        "name": "Cyber Threat Management",
+        "issuer": "Cisco",
+        "date": "2025",
+        "id": "cisco-cyber-threat",
+        "credentialUrl": "https://www.credly.com/users/vinicius-silva-de-andrade/badges"
+      }
+    ]
+  },
+  "github": {
+    "title": "Active Development",
+    "subtitle": "My GitHub Ecosystem",
+    "stats": "Profile Stats",
+    "repos": "Repositories",
+    "commits": "Recent Commits",
+    "stars": "Stars",
+    "forks": "Forks",
+    "contributions": "Contributions",
+    "viewProfile": "View GitHub Profile"
+  },
+  "stats": {
+    "projects": "Real Projects",
+    "technologies": "Tech Stack Items",
+    "commits": "GitHub Commits",
+    "certifications": "Certifications",
+    "years": "Years of Study"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's Build Something Awesome Together",
+    "name": "Full Name",
+    "email": "Business Email",
+    "message": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I will get back to you shortly.",
+    "error": "An error occurred while sending. Please try again or reach out on WhatsApp.",
+    "validation": {
+      "name": "Name must be at least 3 characters long.",
+      "email": "Please enter a valid email address.",
+      "message": "Message must be at least 10 characters long."
+    }
+  }
+}
