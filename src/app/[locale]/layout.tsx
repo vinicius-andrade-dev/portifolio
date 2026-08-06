@@ -30,7 +30,7 @@ export async function generateMetadata({
   const locale = resolvedParams.locale;
   const dict = getDictionary(locale);
 
-  const siteUrl = "https://viniciusandrade.com"; // placeholder professional domain
+  const siteUrl = "https://viniciusandrade-dev.vercel.app"; // placeholder professional domain
   const localizedUrl = locale === "pt" ? siteUrl : `${siteUrl}/${locale}`;
 
   return {
@@ -87,7 +87,7 @@ export default async function LocaleLayout({
     "@type": "Person",
     "name": "Vinicius Silva de Andrade",
     "jobTitle": "Full Stack Developer",
-    "url": "https://viniciusandrade.com",
+    "url": "https://viniciusandrade-dev.vercel.app",
     "sameAs": [
       "https://github.com/lisboainformatica",
       "https://linkedin.com/in/vinicius-andrade-dev",
