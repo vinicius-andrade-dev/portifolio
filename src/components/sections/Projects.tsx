@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Database, Users, ShieldAlert, Cpu } from "lucide-react";
+import { ExternalLink, Database, Users, ShieldAlert, Cpu, Layers, ArrowRightLeft } from "lucide-react";
 import { useLocale } from "@/hooks/useLocale";
 import { GithubIcon } from "@/components/ui/Icons";
 import { Card, CardContent } from "@/components/ui/Card";
@@ -28,6 +28,22 @@ export function Projects() {
 
   // Map technologies to each project ID for badges
   const projectTechs: Record<string, string[]> = {
+    protocolo360: [
+      "NestJS",
+      "Next.js 15",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Redis",
+      "Docker",
+      "JWT",
+      "RBAC",
+      "Multi-Tenant",
+      "AsyncLocalStorage",
+      "TanStack Query",
+      "Tailwind CSS",
+      "Shadcn/UI",
+    ],
     ubs: [
       "Next.js",
       "TypeScript",
@@ -55,6 +71,9 @@ export function Projects() {
   };
 
   const projectLinks: Record<string, { demo?: string; code: string }> = {
+    protocolo360: {
+      code: "https://github.com/lisboainformatica/protocolo360",
+    },
     ubs: {
       code: "https://github.com/lisboainformatica/ubs",
     },
@@ -69,6 +88,53 @@ export function Projects() {
 
   const renderVisualMockup = (id: string) => {
     switch (id) {
+      case "protocolo360":
+        return (
+          <div className="w-full h-full min-h-[220px] rounded-2xl bg-zinc-950 p-4 border border-zinc-800/80 flex flex-col text-xs font-mono text-zinc-400 overflow-hidden shadow-inner">
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-3">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+              </div>
+              <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-semibold">SAAS MULTI-TENANT CONTEXT</span>
+            </div>
+            
+            {/* Context details */}
+            <div className="flex-1 flex flex-col gap-2">
+              <div className="flex justify-between items-center bg-zinc-900/50 p-2 rounded-lg border border-zinc-800/50">
+                <div className="flex items-center gap-2">
+                  <span className="p-1 rounded-sm bg-indigo-500/20 text-indigo-400"><Layers className="w-3.5 h-3.5" /></span>
+                  <span className="font-bold text-zinc-200">Tenant: Prefeitura de Itajaí</span>
+                </div>
+                <Badge variant="outline" className="text-[9px] border-indigo-900/50 text-indigo-400 bg-indigo-950/20">Prefix: ITAJ</Badge>
+              </div>
+
+              {/* Protocol display */}
+              <div className="bg-zinc-900/40 p-2.5 rounded-lg border border-zinc-800/20 flex flex-col gap-1.5">
+                <div className="flex justify-between items-center">
+                  <span className="text-[10px] text-zinc-500 font-semibold">PROTOCOLO: <b className="text-zinc-300">ITAJ-2026-0042</b></span>
+                  <span className="text-[9px] px-1.5 py-0.2 bg-emerald-950/40 text-emerald-400 border border-emerald-900/50 rounded font-semibold">TRAMITADO</span>
+                </div>
+                <div className="flex items-center justify-between mt-1 text-[9px] bg-black/30 p-1.5 rounded border border-zinc-850">
+                  <span className="text-zinc-400">GABINETE</span>
+                  <ArrowRightLeft className="w-3 h-3 text-indigo-400" />
+                  <span className="text-zinc-300">FINANÇAS</span>
+                </div>
+              </div>
+
+              {/* Logical Isolation & AsyncLocalStorage logger */}
+              <div className="flex-1 bg-black/60 p-2 rounded-lg border border-zinc-900 font-mono text-[9px] text-zinc-550 space-y-1 overflow-y-auto leading-relaxed">
+                <p className="text-zinc-600">[TenantMiddleware] Token validated. context: {"{ tenantId: 'ITAJ' }"}</p>
+                <p className="text-violet-400">[AsyncLocalStorage] Context stored on request thread</p>
+                <p className="text-emerald-500">[PrismaExtension] Intercepted query findUnique(Protocolo)</p>
+                <p className="text-cyan-400 font-bold">[PrismaService] Injecting automatically: where: {"{ tenantId: 'ITAJ' }"}</p>
+              </div>
+            </div>
+          </div>
+        );
+
       case "ubs":
         return (
           <div className="w-full h-full min-h-[220px] rounded-2xl bg-zinc-950 p-4 border border-zinc-800/80 flex flex-col text-xs font-mono text-zinc-400 overflow-hidden shadow-inner">

@@ -67,6 +67,17 @@
     "active": "En Línea",
     "list": [
       {
+        "id": "protocolo360",
+        "name": "Protocolo 360",
+        "tagline": "SaaS Multi-Tenant de Protocolos y Documentos",
+        "description": "Un sistema SaaS profesional para el registro, tramitación, seguimiento y consulta pública de documentos administrativos bajo un número de protocolo único. Diseñado con aislamiento lógico estricto en la base de dados, permitiendo que múltiples organizaciones compartan infraestructura de manera segura.",
+        "problemText": "Las organizaciones públicas y privadas requieren un control estricto y un historial detallado del trámite de documentos administrativos de forma centralizada, sin riesgo de filtración de datos confidenciales entre diferentes inquilinos (tenants).",
+        "solutionText": "Desarrollo de una arquitectura multi-tenant con aislamiento a nivel de ORM (extensiones de Prisma) y control de acceso RBAC de tres niveles (MASTER, ADMIN, OPERADOR). Inclui portal de consulta pública con ofuscación de datos sensibles y registros de auditoría inmutables.",
+        "architectureText": "Backend con NestJS estructurado bajo arquitectura modular, Prisma ORM (v7), PostgreSQL con aislamiento lógico automatizado a través de AsyncLocalStorage de Node.js, caché y límites con Redis. Frontend utilizando Next.js 15+ App Router, Tailwind CSS, Shadcn/UI y TanStack Query.",
+        "challengesText": "Nueva configuración de conexão dinámica de Prisma 7, aislamiento automático de consultas complejas por lotes sin romper el tipado de TypeScript, conflictos de resolución ESM (nodenext) y metadados de decoradores de interfaces en NestJS.",
+        "resultsText": "Implementación exitosa de un sistema SaaS altamente escalable y de nivel empresarial con un aislamiento de datos 100% a prueba de fallos en tiempo de desarrollo. Admite prefijos de protocolo por inquilino y registros inmutables."
+      },
+      {
         "id": "ubs",
         "name": "PSF Digital (UBS)",
         "tagline": "Sistema de Gestión de Unidades Básicas de Salud",

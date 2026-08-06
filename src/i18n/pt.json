@@ -67,6 +67,17 @@
     "active": "Online",
     "list": [
       {
+        "id": "protocolo360",
+        "name": "Protocolo 360",
+        "tagline": "SaaS Multi-Tenant de Protocolos e Documentos",
+        "description": "Um sistema SaaS profissional para cadastro, tramitação, acompanhamento e consulta pública de documentos administrativos com número único de protocolo. Projetado sob o conceito de isolamento lógico em banco de dados, permite o uso simultâneo de múltiplas organizações com segurança absoluta.",
+        "problemText": "Organizações públicas e privadas necessitam de controle rigoroso e histórico de trâmites de documentos administrativos de forma centralizada e sem risco de vazamento de dados confidenciais entre diferentes inquilinos (tenants).",
+        "solutionText": "Desenvolvimento de arquitetura multi-tenant com isolamento em nível de ORM (Prisma Middleware/Extension) e controle de acesso RBAC de três níveis (MASTER, ADMIN, OPERADOR). Inclui consulta pública com ofuscamento automático de dados sensíveis e logs imutáveis de auditoria.",
+        "architectureText": "Backend NestJS modular com Prisma ORM (v7) e PostgreSQL. Isolamento automatizado via AsyncLocalStorage (injetando filters no Prisma context). Cache e limitador com Redis. Frontend com Next.js 15+ App Router, Tailwind CSS, Shadcn/UI e TanStack Query.",
+        "challengesText": "Resolução do padrão de conexão do Prisma 7, injeção automática de filtros em lote (transactions) sem quebrar o TypeScript, compatibilidade nodenext no editor e metadados de decoradores de interfaces no NestJS.",
+        "resultsText": "Implementação de um sistema SaaS escalável de nível corporativo com isolamento de dados 100% à prova de falhas em tempo de desenvolvimento. Suporta prefixos customizados por tenant e auditoria completa."
+      },
+      {
         "id": "ubs",
         "name": "PSF Digital (UBS)",
         "tagline": "Sistema de Gestão de Unidades Básicas de Saúde",

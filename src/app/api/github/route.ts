@@ -115,6 +115,14 @@ export async function GET() {
       },
       repos: [
         {
+          name: "protocolo360",
+          description: "Sistema SaaS Multi-Tenant de Protocolos e Documentos com isolamento lógico em ORM (NestJS, Prisma, Next.js, PostgreSQL).",
+          stars: 5,
+          forks: 2,
+          language: "TypeScript",
+          url: "https://github.com/lisboainformatica/protocolo360",
+        },
+        {
           name: "ubs",
           description: "Sistema completo para gestão de Unidades Básicas de Saúde (Next.js, Prisma, PostgreSQL).",
           stars: 4,

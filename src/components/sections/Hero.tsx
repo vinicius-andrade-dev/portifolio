@@ -205,6 +205,9 @@ export function Hero() {
                       <stop offset="0%" stopColor="#6366f1" />
                       <stop offset="100%" stopColor="#10b981" />
                     </linearGradient>
+                    <clipPath id="avatarClip">
+                      <circle cx="100" cy="100" r="52" />
+                    </clipPath>
                   </defs>
                   
                   {/* Outer Tech Circle */}
@@ -221,13 +224,17 @@ export function Hero() {
                   <path d="M155 135 L140 120 L155 105" stroke="url(#circleGlow)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   <rect x="112" y="105" width="20" height="4" rx="2" fill="#7c3aed" />
 
-                  {/* Stylized Developer Silhouette Face */}
-                  <circle cx="100" cy="90" r="28" fill="url(#avatarGlow)" fillOpacity="0.1" stroke="url(#avatarGlow)" strokeWidth="2" />
-                  <path d="M64 150 C64 125 80 118 100 118 C120 118 136 125 136 150" fill="url(#avatarGlow)" fillOpacity="0.1" stroke="url(#avatarGlow)" strokeWidth="2" />
-                  
-                  {/* Glowing Core */}
-                  <circle cx="100" cy="90" r="6" fill="#06b6d4" className="animate-ping" style={{ transformOrigin: "center", animationDuration: "2.5s" }} />
-                  <circle cx="100" cy="90" r="4" fill="url(#avatarGlow)" />
+                  {/* Circular Avatar Border & Image */}
+                  <circle cx="100" cy="100" r="55" stroke="url(#avatarGlow)" strokeWidth="2" fill="none" />
+                  <image
+                    href="/avatar.png"
+                    x="48"
+                    y="48"
+                    width="104"
+                    height="104"
+                    clipPath="url(#avatarClip)"
+                    preserveAspectRatio="xMidYMid slice"
+                  />
                 </svg>
                 
                 {/* Shiny reflex overlay */}
