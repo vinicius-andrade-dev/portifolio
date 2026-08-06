@@ -130,7 +130,7 @@ export function Navbar() {
               <GithubIcon className="w-4 h-4" />
             </a>
             <a
-              href="https://linkedin.com/in/vinicius-andrade-sistemas"
+              href="https://linkedin.com/in/vinicius-andrade-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 transition-colors"
@@ -203,7 +203,7 @@ export function Navbar() {
                   <GithubIcon className="w-4 h-4" /> GitHub
                 </a>
                 <a
-                  href="https://linkedin.com/in/vinicius-andrade-sistemas"
+                  href="https://linkedin.com/in/vinicius-andrade-dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-sm font-semibold"

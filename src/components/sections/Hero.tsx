@@ -162,7 +162,7 @@ export function Hero() {
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/in/vinicius-andrade-sistemas"
+                href="https://linkedin.com/in/vinicius-andrade-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-full"

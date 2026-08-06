@@ -90,7 +90,7 @@ export default async function LocaleLayout({
     "url": "https://viniciusandrade.com",
     "sameAs": [
       "https://github.com/lisboainformatica",
-      "https://linkedin.com/in/vinicius-andrade-sistemas",
+      "https://linkedin.com/in/vinicius-andrade-dev",
     ],
     "knowsAbout": [
       "JavaScript",

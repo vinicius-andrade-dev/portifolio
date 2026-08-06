@@ -15,7 +15,7 @@ export function Footer() {
     },
     {
       icon: <LinkedinIcon className="w-5 h-5" />,
-      url: "https://linkedin.com/in/vinicius-andrade-sistemas",
+      url: "https://linkedin.com/in/vinicius-andrade-dev",
       label: "LinkedIn",
     },
     {

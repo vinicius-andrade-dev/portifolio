@@ -130,7 +130,7 @@ export function Contact() {
             {/* Social media connections */}
             <div className="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/40 dark:bg-zinc-950/20 backdrop-blur-xs flex items-center justify-around">
               <a
-                href="https://linkedin.com/in/vinicius-andrade-sistemas"
+                href="https://linkedin.com/in/vinicius-andrade-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm font-bold text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
