@@ -1,3 +1,8 @@
+/**
+ * Setor / Seção: Sobre (About)
+ * Apresenta uma introdução sobre o profissional, formação atual e uma
+ * linha do tempo interativa destacando os marcos da trajetória.
+ */
 "use client";
 
 import { motion } from "framer-motion";
@@ -39,7 +44,7 @@ export function About() {
     }),
   };
 
-  // Map icons for timeline events
+  // Mapeamento de ícones para eventos da linha do tempo
   const icons = [
     <Shield className="w-5 h-5 text-indigo-500" key="shield" />,
     <Server className="w-5 h-5 text-cyan-500" key="server" />,
@@ -51,12 +56,12 @@ export function About() {
       id="about"
       className="py-24 relative overflow-hidden bg-zinc-50 dark:bg-[#030303]/40 border-y border-zinc-100 dark:border-zinc-900/60 transition-colors"
     >
-      {/* Background shapes */}
+      {/* Elementos visuais de fundo (formas decorativas) */}
       <div className="absolute top-1/3 left-0 w-80 h-80 rounded-full bg-indigo-500/5 dark:bg-indigo-500/2 glow-orb" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -80,7 +85,7 @@ export function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Text Trajectory */}
+          {/* Lado Esquerdo: Trajetória e texto de introdução */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -125,13 +130,13 @@ export function About() {
             </motion.div>
           </motion.div>
 
-          {/* Right Vertical Timeline */}
+          {/* Lado Direito: Linha do tempo vertical interactiva */}
           <div className="lg:col-span-7 relative pl-8 lg:pl-10">
             
-            {/* Vertical Line */}
+            {/* Linha vertical da linha do tempo */}
             <div className="absolute left-4.5 lg:left-6.5 top-2 bottom-2 w-0.5 bg-zinc-200 dark:bg-zinc-800/80" />
 
-            {/* Timeline Cards wrapper */}
+            {/* Agrupador de cards da linha do tempo */}
             <div className="space-y-10">
               {dict.about.events.map((event: any, index: number) => (
                 <motion.div
@@ -143,12 +148,12 @@ export function About() {
                   viewport={{ once: true, margin: "-100px" }}
                   className="relative"
                 >
-                  {/* Timeline Node Point icon container */}
+                  {/* Contêiner do ícone do ponto/nó da linha do tempo */}
                   <span className="absolute -left-11 lg:-left-13 top-1 flex items-center justify-center w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-xs z-10 text-zinc-700 dark:text-zinc-300">
                     {icons[index] || <Code className="w-4 h-4" />}
                   </span>
 
-                  {/* Card Event details */}
+                  {/* Card com os detalhes do evento */}
                   <Card hoverEffect glass className="relative border-zinc-200/80 dark:border-zinc-800/60">
                     <CardContent className="p-6">
                       <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 tracking-wider">

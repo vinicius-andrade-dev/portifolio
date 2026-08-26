@@ -1,3 +1,8 @@
+/**
+ * Setor / Seção: Estatísticas (Stats)
+ * Exibe contadores animados com métricas relevantes sobre a carreira do profissional,
+ * como número de projetos, tecnologias utilizadas, commits, certificações e anos de experiência.
+ */
 "use client";
 
 import { useEffect, useState, useRef } from "react";
@@ -25,7 +30,7 @@ function AnimatedCounter({ value, duration = 1.5, suffix = "" }: AnimatedCounter
     if (start === end) return;
 
     const totalDurationMs = duration * 1000;
-    // Calculate the frame rate / step count
+    // Calcula a taxa de quadros (frame rate) / quantidade de passos
     const intervalTime = 16; // ~60fps
     const totalSteps = totalDurationMs / intervalTime;
     const stepIncrement = end / totalSteps;
@@ -119,17 +124,17 @@ export function Stats() {
             <motion.div variants={itemVariants} key={index} className="h-full">
               <Card glass className="h-full border-zinc-200/60 dark:border-zinc-800/60">
                 <CardContent className="p-5 flex flex-col items-center justify-center text-center space-y-2">
-                  {/* Icon wrap */}
+                  {/* Contêiner do Ícone */}
                   <div className="p-2 rounded-xl bg-white dark:bg-zinc-900/60 border border-zinc-150 dark:border-zinc-800/40">
                     {item.icon}
                   </div>
                   
-                  {/* Number count */}
+                  {/* Contador numérico */}
                   <span className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">
                     <AnimatedCounter value={item.value} suffix={item.suffix} />
                   </span>
 
-                  {/* Label */}
+                  {/* Rótulo / Legenda */}
                   <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
                     {item.label}
                   </span>

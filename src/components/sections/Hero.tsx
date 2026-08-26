@@ -1,3 +1,9 @@
+/**
+ * Setor / Seção: Hero (Apresentação Principal)
+ * É a primeira seção visível da página, contendo uma saudação com o nome do profissional,
+ * título principal (headline), breve resumo (subheadline), botões de ação para visualização
+ * de projetos e download do currículo, links sociais e um avatar estilizado com animações.
+ */
 "use client";
 
 import { motion } from "framer-motion";
@@ -59,13 +65,13 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-white dark:bg-[#030303] transition-colors"
     >
-      {/* Background Grid */}
+      {/* Grade de Fundo (Grid) */}
       <div className="absolute inset-0 grid-bg opacity-[0.4] dark:opacity-[0.25]" />
       
-      {/* Radial Gradient overlay to fade the grid at borders */}
+      {/* Camada de Gradiente Radial para suavizar a grade nas bordas */}
       <div className="absolute inset-0 bg-radial from-transparent via-white/80 to-white dark:via-[#030303]/80 dark:to-[#030303]" />
 
-      {/* Glow Orbs (Blobs) */}
+      {/* Esferas de Brilho de Fundo (Blobs) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           variants={glowVariants}
@@ -82,14 +88,14 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Hero Left Content */}
+          {/* Conteúdo da Esquerda do Hero */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start"
           >
-            {/* Name */}
+            {/* Nome */}
             <motion.h1
               variants={itemVariants}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-950 dark:text-white mb-4"
@@ -100,7 +106,7 @@ export function Hero() {
               </span>
             </motion.h1>
 
-            {/* Headline */}
+            {/* Título / Headline */}
             <motion.h2
               variants={itemVariants}
               className="text-xl sm:text-2xl font-bold text-zinc-800 dark:text-zinc-200 tracking-tight mb-4 max-w-2xl"
@@ -108,7 +114,7 @@ export function Hero() {
               {dict.hero.headline}
             </motion.h2>
 
-            {/* Subheadline */}
+            {/* Subtítulo / Subheadline */}
             <motion.p
               variants={itemVariants}
               className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl"
@@ -116,7 +122,7 @@ export function Hero() {
               {dict.hero.subheadline}
             </motion.p>
 
-            {/* Action Buttons */}
+            {/* Botões de Ação */}
             <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
@@ -132,7 +138,7 @@ export function Hero() {
               </Button>
               
               <a
-                href="/cv-vinicius.pdf" // Placeholder CV path
+                href="/cv-vinicius.pdf" // Caminho de espaço reservado para o currículo PDF
                 download
                 className="w-full sm:w-auto"
               >
@@ -147,7 +153,7 @@ export function Hero() {
               </a>
             </motion.div>
 
-            {/* Social Icons Links */}
+            {/* Links de Ícones Sociais */}
             <motion.div
               variants={itemVariants}
               className="flex items-center gap-4 mt-8 pt-8 border-t border-zinc-100 dark:border-zinc-900 w-full justify-center lg:justify-start"
@@ -173,7 +179,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Hero Right Visuals (Stylized Avatar) */}
+          {/* Elementos Visuais da Direita do Hero (Avatar Estilizado) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -181,15 +187,15 @@ export function Hero() {
             className="lg:col-span-5 flex justify-center items-center"
           >
             <div className="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96">
-              {/* Spinning background glow element */}
+              {/* Elemento giratório de brilho de fundo */}
               <div className="absolute inset-0 bg-linear-to-tr from-violet-600/30 to-cyan-500/30 dark:from-violet-500/20 dark:to-cyan-400/20 rounded-full blur-3xl animate-pulse-slow" />
               
-              {/* Floating Frame */}
+              {/* Moldura Flutuante (Floating Frame) */}
               <div className="relative w-full h-full rounded-3xl border border-zinc-200/60 dark:border-zinc-800/80 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md shadow-2xl p-4 flex items-center justify-center overflow-hidden animate-float">
-                {/* Visual grid background inside card */}
+                {/* Fundo visual de grade dentro do card */}
                 <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
                 
-                {/* Styled Professional SVG Code Avatar */}
+                {/* Avatar SVG de Código */}
                 <svg
                   viewBox="0 0 200 200"
                   fill="none"
@@ -210,21 +216,21 @@ export function Hero() {
                     </clipPath>
                   </defs>
                   
-                  {/* Outer Tech Circle */}
+                  {/* Círculo Tecnológico Externo */}
                   <circle cx="100" cy="100" r="85" stroke="url(#circleGlow)" strokeWidth="1" strokeDasharray="4 8" className="animate-spin" style={{ transformOrigin: "center", animationDuration: "30s" }} />
                   
-                  {/* Inner Tech Ring */}
+                  {/* Anel Tecnológico Interno */}
                   <circle cx="100" cy="100" r="75" stroke="#ffffff" strokeOpacity="0.05" strokeWidth="2" />
                   <circle cx="100" cy="100" r="75" stroke="url(#avatarGlow)" strokeOpacity="0.4" strokeWidth="1.5" strokeDasharray="30 150" className="animate-spin" style={{ transformOrigin: "center", animationDuration: "12s" }} />
 
-                  {/* Code Elements Vector representation */}
+                  {/* Representação Vetorial de Elementos de Código */}
                   <path d="M45 65 L60 80 L45 95" stroke="url(#avatarGlow)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   <rect x="68" y="90" width="20" height="4" rx="2" fill="#06b6d4" />
                   
                   <path d="M155 135 L140 120 L155 105" stroke="url(#circleGlow)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   <rect x="112" y="105" width="20" height="4" rx="2" fill="#7c3aed" />
 
-                  {/* Circular Avatar Border & Image */}
+                  {/* Borda e Imagem Circular do Avatar */}
                   <circle cx="100" cy="100" r="55" stroke="url(#avatarGlow)" strokeWidth="2" fill="none" />
                   <image
                     href="/avatar.png"
@@ -237,7 +243,7 @@ export function Hero() {
                   />
                 </svg>
                 
-                {/* Shiny reflex overlay */}
+                {/* Camada de reflexo brilhante */}
                 <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/10 to-white/5 dark:via-white/5 dark:to-white/0 pointer-events-none" />
               </div>
             </div>

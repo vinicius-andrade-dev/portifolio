@@ -1,3 +1,9 @@
+/**
+ * Setor / Seção: Contato (Contact)
+ * Permite que visitantes enviem mensagens diretamente ao profissional,
+ * além de exibir informações de e-mail, telefone/WhatsApp, localização
+ * e links para redes sociais (LinkedIn e GitHub).
+ */
 "use client";
 
 import { useState } from "react";
@@ -16,7 +22,7 @@ export function Contact() {
   const { dict } = useLocale();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  // Validate fields with Zod using localized error strings
+  // Validação dos campos com o Zod usando mensagens de erro localizadas
   const contactSchema = z.object({
     name: z.string().min(3, { message: dict.contact.validation.name }),
     email: z.string().email({ message: dict.contact.validation.email }),
@@ -80,12 +86,12 @@ export function Contact() {
       id="contact"
       className="py-24 relative overflow-hidden bg-zinc-50 dark:bg-[#030303]/40 border-t border-zinc-100 dark:border-zinc-900/60 transition-colors"
     >
-      {/* Background decoration blur */}
+      {/* Elemento decorativo com desfoque (blur) de fundo */}
       <div className="absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full bg-linear-to-tr from-violet-500/10 to-cyan-500/10 dark:from-violet-500/5 dark:to-cyan-400/5 glow-orb pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">
             {dict.contact.title}
@@ -97,7 +103,7 @@ export function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
-          {/* Left panel: Info & Socials */}
+          {/* Painel da Esquerda: Informações de Contato e Redes Sociais */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-6">
               {contactDetails.map((detail) => (
@@ -127,7 +133,7 @@ export function Contact() {
               ))}
             </div>
 
-            {/* Social media connections */}
+            {/* Conexões de redes sociais (LinkedIn, GitHub) */}
             <div className="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/40 dark:bg-zinc-950/20 backdrop-blur-xs flex items-center justify-around">
               <a
                 href="https://linkedin.com/in/vinicius-andrade-dev"
@@ -148,12 +154,12 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Right panel: React Hook Form */}
+          {/* Painel da Direita: Formulário de Contato usando React Hook Form */}
           <div className="lg:col-span-7">
             <Card glass className="border-zinc-200/80 dark:border-zinc-800/80">
               <CardContent className="p-6 sm:p-8">
                 
-                {/* Form feedback statuses */}
+                {/* Estados de feedback do formulário (Sucesso ou Erro) */}
                 {status === "success" && (
                   <div className="flex items-start gap-3 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/40 text-emerald-800 dark:text-emerald-300 mb-6">
                     <CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500 mt-0.5" />

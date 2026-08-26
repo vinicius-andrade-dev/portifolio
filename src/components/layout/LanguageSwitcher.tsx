@@ -16,7 +16,7 @@ export function LanguageSwitcher() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Extract current language from URL
+  // Extrai o idioma atual do URL
   let currentLocale = "pt";
   if (pathname.startsWith("/en/") || pathname === "/en") currentLocale = "en";
   else if (pathname.startsWith("/es/") || pathname === "/es") currentLocale = "es";
@@ -27,21 +27,21 @@ export function LanguageSwitcher() {
 
     let newPath = pathname;
 
-    // Remove old locale prefix if present
+    // Remove prefixo de idioma antigo se presente
     if (pathname.startsWith("/en")) {
       newPath = pathname.substring(3) || "/";
     } else if (pathname.startsWith("/es")) {
       newPath = pathname.substring(3) || "/";
     }
 
-    // Add new locale prefix (default 'pt' uses root directory '/')
+    // Add novo local (o padrão 'pt' usa o diretório raiz '/')
     if (locale === "pt") {
       newPath = newPath.startsWith("/") ? newPath : `/${newPath}`;
     } else {
       newPath = newPath.startsWith("/") ? `/${locale}${newPath}` : `/${locale}/${newPath}`;
     }
 
-    // Format slash duplicates
+    // Formatar barras duplicadas
     newPath = newPath.replace(/\/+/g, "/");
     if (newPath.endsWith("/") && newPath.length > 1) {
       newPath = newPath.slice(0, -1);

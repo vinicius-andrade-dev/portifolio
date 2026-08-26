@@ -1,3 +1,10 @@
+/**
+ * Setor / Seção: Projetos (Projects)
+ * Apresenta o portfólio de projetos do desenvolvedor, permitindo filtrar e visualizar
+ * detalhes detalhados (problema, solução, arquitetura, desafios e resultados) de forma
+ * interativa através de abas, além de listar tecnologias e fornecer links para demonstrações e código.
+ * Contém também representações visuais em código de cada painel de sistema simulado.
+ */
 "use client";
 
 import { motion } from "framer-motion";
@@ -26,7 +33,7 @@ export function Projects() {
 
   const projects: ProjectDetails[] = dict.projects.list;
 
-  // Map technologies to each project ID for badges
+  // Mapeamento de tecnologias para cada ID de projeto (usado nas badges)
   const projectTechs: Record<string, string[]> = {
     protocolo360: [
       "NestJS",
@@ -82,7 +89,7 @@ export function Projects() {
       code: "https://github.com/lisboainformatica/warehouse-mvp",
     },
     "api-rest": {
-      code: "https://github.com/lisboainformatica", // search automatically or profile
+      code: "https://github.com/lisboainformatica", // busca automática ou perfil
     },
   };
 
@@ -91,7 +98,7 @@ export function Projects() {
       case "protocolo360":
         return (
           <div className="w-full h-full min-h-[220px] rounded-2xl bg-zinc-950 p-4 border border-zinc-800/80 flex flex-col text-xs font-mono text-zinc-400 overflow-hidden shadow-inner">
-            {/* Header */}
+            {/* Cabeçalho */}
             <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-3">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -101,7 +108,7 @@ export function Projects() {
               <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-semibold">SAAS MULTI-TENANT CONTEXT</span>
             </div>
             
-            {/* Context details */}
+            {/* Detalhes do contexto */}
             <div className="flex-1 flex flex-col gap-2">
               <div className="flex justify-between items-center bg-zinc-900/50 p-2 rounded-lg border border-zinc-800/50">
                 <div className="flex items-center gap-2">
@@ -111,7 +118,7 @@ export function Projects() {
                 <Badge variant="outline" className="text-[9px] border-indigo-900/50 text-indigo-400 bg-indigo-950/20">Prefix: ITAJ</Badge>
               </div>
 
-              {/* Protocol display */}
+              {/* Exibição do protocolo */}
               <div className="bg-zinc-900/40 p-2.5 rounded-lg border border-zinc-800/20 flex flex-col gap-1.5">
                 <div className="flex justify-between items-center">
                   <span className="text-[10px] text-zinc-500 font-semibold">PROTOCOLO: <b className="text-zinc-300">ITAJ-2026-0042</b></span>
@@ -124,8 +131,8 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Logical Isolation & AsyncLocalStorage logger */}
-              <div className="flex-1 bg-black/60 p-2 rounded-lg border border-zinc-900 font-mono text-[9px] text-zinc-550 space-y-1 overflow-y-auto leading-relaxed">
+              {/* Simulação de isolamento lógico e logger do AsyncLocalStorage */}
+              <div className="flex-1 bg-black/60 p-2 rounded-lg border border-zinc-900 font-mono text-[9px] text-zinc-555 space-y-1 overflow-y-auto leading-relaxed">
                 <p className="text-zinc-600">[TenantMiddleware] Token validated. context: {"{ tenantId: 'ITAJ' }"}</p>
                 <p className="text-violet-400">[AsyncLocalStorage] Context stored on request thread</p>
                 <p className="text-emerald-500">[PrismaExtension] Intercepted query findUnique(Protocolo)</p>
@@ -138,7 +145,7 @@ export function Projects() {
       case "ubs":
         return (
           <div className="w-full h-full min-h-[220px] rounded-2xl bg-zinc-950 p-4 border border-zinc-800/80 flex flex-col text-xs font-mono text-zinc-400 overflow-hidden shadow-inner">
-            {/* Header */}
+            {/* Cabeçalho */}
             <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-3">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -147,7 +154,7 @@ export function Projects() {
               </div>
               <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-semibold">PSF DIGITAL PANEL</span>
             </div>
-            {/* Mock Scheduler interface */}
+            {/* Simulação de interface do agendador */}
             <div className="flex-1 flex flex-col gap-2">
               <div className="flex justify-between items-center bg-zinc-900/50 p-2 rounded-lg border border-zinc-800/50">
                 <div className="flex items-center gap-2">
@@ -172,7 +179,7 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Console logging */}
+              {/* Logs no console */}
               <div className="flex-1 bg-black/60 p-2.5 rounded-lg border border-zinc-900 font-mono text-[9px] text-zinc-500 space-y-1 overflow-y-auto">
                 <p className="text-zinc-600">[system] Init Multi-Tenant handler for host 'clinica-centro'</p>
                 <p className="text-violet-400">[postgres] pg_crypto initialized. HIPAA & LGPD compliance: OK</p>
@@ -185,7 +192,7 @@ export function Projects() {
       case "warehouse":
         return (
           <div className="w-full h-full min-h-[220px] rounded-2xl bg-zinc-950 p-4 border border-zinc-800/80 flex flex-col text-xs font-mono text-zinc-400 overflow-hidden shadow-inner">
-            {/* Header */}
+            {/* Cabeçalho */}
             <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-3">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -194,7 +201,7 @@ export function Projects() {
               </div>
               <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-semibold">STOCK CONTROL CHART</span>
             </div>
-            {/* Mock Warehouse layout with graph */}
+            {/* Simulação de layout de estoque com gráficos */}
             <div className="flex-1 flex flex-col gap-3 justify-center">
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-[10px]">
@@ -236,7 +243,7 @@ export function Projects() {
       case "api-rest":
         return (
           <div className="w-full h-full min-h-[220px] rounded-2xl bg-zinc-950 p-4 border border-zinc-800/80 flex flex-col text-xs font-mono text-zinc-400 overflow-hidden shadow-inner">
-            {/* Header */}
+            {/* Cabeçalho */}
             <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-3">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -245,7 +252,7 @@ export function Projects() {
               </div>
               <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-semibold">SWAGGER OPENAPI DOCS</span>
             </div>
-            {/* Mock endpoint layout */}
+            {/* Simulação de layout de endpoint */}
             <div className="flex-1 flex flex-col gap-2">
               <div className="flex items-center gap-2 bg-emerald-950/20 border border-emerald-900/30 p-2 rounded-lg text-emerald-400 font-semibold">
                 <span className="px-1.5 py-0.5 rounded bg-emerald-500 text-black text-[9px] font-bold">GET</span>
@@ -256,7 +263,7 @@ export function Projects() {
                 <span>/api/v1/users/register</span>
               </div>
               
-              {/* Json representation */}
+              {/* Representação JSON */}
               <div className="bg-black/60 p-2 rounded-lg border border-zinc-900 text-[9px] text-zinc-500 overflow-y-auto leading-relaxed">
                 <p className="text-zinc-400">{"{"}</p>
                 <p className="pl-4"><span className="text-indigo-400">"status"</span>: <span className="text-emerald-400">200</span>,</p>
@@ -294,12 +301,12 @@ export function Projects() {
       id="projects"
       className="py-24 relative overflow-hidden bg-zinc-50 dark:bg-[#030303]/40 border-b border-zinc-100 dark:border-zinc-900/60 transition-colors"
     >
-      {/* Background decoration */}
+      {/* Elemento decorativo de fundo */}
       <div className="absolute top-1/2 right-1/4 w-[380px] h-[380px] rounded-full bg-violet-500/5 dark:bg-violet-500/2 glow-orb pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -321,7 +328,7 @@ export function Projects() {
           </motion.h3>
         </div>
 
-        {/* Project Cards List */}
+        {/* Lista de Cards de Projetos */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -335,10 +342,10 @@ export function Projects() {
                 <CardContent className="p-0">
                   <div className="grid grid-cols-1 lg:grid-cols-12">
                     
-                    {/* Project Left Side: Details & Tabs */}
+                    {/* Lado Esquerdo do Projeto: Detalhes e Abas interativas */}
                     <div className="p-6 sm:p-8 lg:col-span-7 flex flex-col justify-between">
                       <div>
-                        {/* Header Details */}
+                        {/* Detalhes do Cabeçalho do Projeto */}
                         <div className="flex flex-wrap items-center gap-2 mb-3">
                           <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 tracking-wide uppercase">
                             {project.tagline}
@@ -358,7 +365,7 @@ export function Projects() {
                           {project.description}
                         </p>
 
-                        {/* Interactive Tabs */}
+                        {/* Abas interativas (Problema, Solução, Arquitetura, etc.) */}
                         <Tabs defaultValue="problem" className="w-full">
                           <TabsList className="mb-4">
                             <TabsTrigger value="problem">{dict.projects.problem}</TabsTrigger>
@@ -387,9 +394,9 @@ export function Projects() {
 
                       </div>
 
-                      {/* Tech badges & Actions links */}
+                      {/* Badges de tecnologia e botões de ação */}
                       <div className="mt-8 pt-6 border-t border-zinc-150 dark:border-zinc-900/60">
-                        {/* Tech Badges */}
+                        {/* Badges de Tecnologias Utilizadas */}
                         <div className="flex flex-wrap gap-1.5 mb-6">
                           {projectTechs[project.id]?.map((tech) => (
                             <Badge key={tech} variant="outline" className="text-[10px] dark:border-zinc-800">
@@ -398,7 +405,7 @@ export function Projects() {
                           ))}
                         </div>
 
-                        {/* Links buttons */}
+                        {/* Links e Botões de Ação (Demo / Código) */}
                         <div className="flex items-center gap-3">
                           {projectLinks[project.id]?.demo && (
                             <a
@@ -433,7 +440,7 @@ export function Projects() {
 
                     </div>
 
-                    {/* Project Right Side: Vector Representation / Screen Mockup */}
+                    {/* Lado Direito do Projeto: Representação Vetorial / Simulador de Tela */}
                     <div className="lg:col-span-5 bg-zinc-100 dark:bg-zinc-900/30 p-6 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-zinc-200 dark:border-zinc-800">
                       <div className="w-full max-w-sm">
                         {renderVisualMockup(project.id)}

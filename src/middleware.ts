@@ -6,7 +6,7 @@ const locales = ["pt", "en", "es"];
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Exclude static assets, API paths, and internal Next.js files
+  // Exclui arquivos estáticos, rotas de API e arquivos internos do Next.js
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
@@ -16,14 +16,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check if the URL has a locale prefix
+  // Verifica se a URL tem um prefixo de idioma
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
   if (pathnameHasLocale) {
-    // If it's the default locale (pt), redirect /pt or /pt/... to / or /...
-    // to maintain a clean URL hierarchy.
+    // Redireciona /pt ou /pt/... para / ou /...
+    // para manter uma hierarquia de URL limpa.
     if (pathname === "/pt") {
       const newUrl = request.nextUrl.clone();
       newUrl.pathname = "/";
@@ -37,8 +37,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // If there's no locale prefix, rewrite it to /pt internally.
-  // This keeps the URL as `/` but serves the Portuguese locale code from the [locale] folder.
+  // Se não houver prefixo de idioma, reescreve para /pt internamente.
+  // Isso mantém a URL como `/` mas serve o código de idioma português da pasta [locale].
   const url = request.nextUrl.clone();
   url.pathname = `/pt${pathname}`;
   return NextResponse.rewrite(url);
@@ -46,7 +46,8 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all paths except api routes, _next/static, _next/image, favicon.ico, etc.
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|manifest.json|icon-.*).*)",
+    // Otimizado para evitar conflitos com novos caminhos do Next.js 16+ (como /_vercel)
+    // Mantém as exclusões originais necessárias
+    "/((?!api|_next/static|_next/image|_vercel|favicon.ico|sitemap.xml|robots.txt|manifest.json|icon-.*).*)",
   ],
 };

@@ -1,3 +1,9 @@
+/**
+ * Setor / Seção: Barra de Navegação (Navbar)
+ * Barra superior fixa que permite a navegação suave entre as seções do portfólio,
+ * acompanhamento do status ativo no scroll do usuário, suporte a alternador de tema
+ * (escuro/claro) e troca de idioma, além de links diretos para perfis sociais.
+ */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -29,7 +35,7 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Detect active section on scroll
+      // Detecta qual seção está ativa ao rolar a página
       const sections = navItems.map((item) => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 200;
 
@@ -57,7 +63,7 @@ export function Navbar() {
       const elementPosition = elementRect - bodyRect;
       const offsetPosition = elementPosition - offset;
 
-      // Use Lenis smooth scroll if active
+      // Usa a rolagem suave do Lenis se estiver ativa
       if ((window as any).lenis) {
         (window as any).lenis.scrollTo(element, { offset: -80 });
       } else {
@@ -79,7 +85,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Name */}
+          {/* Logo / Nome */}
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, "home")}
@@ -93,7 +99,7 @@ export function Navbar() {
             </span>
           </a>
 
-          {/* Desktop Nav Links */}
+          {/* Links de Navegação para Desktop */}
           <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <a
@@ -118,7 +124,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Utility Actions */}
+          {/* Ações Auxiliares (Redes Sociais, Alternador de Tema/Idioma) */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="https://github.com/lisboainformatica"
@@ -152,7 +158,7 @@ export function Navbar() {
             <LanguageSwitcher />
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Botão do Menu Mobile */}
           <div className="flex lg:hidden items-center gap-2">
             <ThemeToggle />
             <LanguageSwitcher />
@@ -168,7 +174,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Gaveta de Navegação Mobile (Drawer) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

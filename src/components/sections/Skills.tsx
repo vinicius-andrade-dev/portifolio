@@ -1,3 +1,9 @@
+/**
+ * Setor / Seção: Habilidades (Skills)
+ * Exibe as competências técnicas do profissional organizadas por categorias
+ * (Frontend, Backend, Banco de Dados, Nuvem e DevOps), com níveis de proficiência
+ * representados por barras de progresso animadas.
+ */
 "use client";
 
 import { motion } from "framer-motion";
@@ -94,12 +100,12 @@ export function Skills() {
       id="skills"
       className="py-24 relative overflow-hidden bg-white dark:bg-[#030303] transition-colors"
     >
-      {/* Glow effect */}
+      {/* Efeito de brilho de fundo */}
       <div className="absolute top-1/4 right-0 w-[450px] h-[450px] rounded-full bg-cyan-500/5 dark:bg-cyan-500/2 glow-orb pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -121,7 +127,7 @@ export function Skills() {
           </motion.h3>
         </div>
 
-        {/* Skills Grid */}
+        {/* Grade/Grid de Habilidades (Skills) */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -134,12 +140,12 @@ export function Skills() {
               <Card hoverEffect glass className="h-full border-zinc-200/80 dark:border-zinc-800/60 flex flex-col">
                 <CardContent className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    {/* Category Title */}
+                    {/* Título da Categoria */}
                     <h4 className="text-md font-bold text-zinc-900 dark:text-white mb-6 uppercase tracking-wider border-b border-zinc-100 dark:border-zinc-800/60 pb-2">
                       {category.title}
                     </h4>
                     
-                    {/* Skills list */}
+                    {/* Lista de Habilidades */}
                     <div className="space-y-5">
                       {category.skills.map((skill) => (
                         <div key={skill.name} className="space-y-1.5">
@@ -152,9 +158,9 @@ export function Skills() {
                             </span>
                           </div>
 
-                          {/* Progress track */}
+                          {/* Trilha de Progresso */}
                           <div className="w-full h-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 overflow-hidden border border-zinc-200/10 dark:border-zinc-800/30">
-                            {/* Animated bar */}
+                            {/* Barra de progresso animada */}
                             <motion.div
                               initial={{ width: 0 }}
                               whileInView={{ width: `${skill.level}%` }}

@@ -1,3 +1,9 @@
+/**
+ * Setor / Seção: Dashboard do GitHub (GithubSection)
+ * Exibe dados em tempo real integrados com a API do GitHub, incluindo
+ * informações de perfil do usuário, métricas de repositórios/estrelas/forks,
+ * linguagens mais utilizadas, grade de contribuições simulada e os repositórios mais recentes.
+ */
 "use client";
 
 import { motion } from "framer-motion";
@@ -47,19 +53,19 @@ export function GithubSection() {
     retry: 1,
   });
 
-  // Render a responsive mock contribution grid
+  // Renderiza uma grade responsiva simulada de contribuições (commits)
   const renderContributionGrid = () => {
-    // 53 weeks * 7 days = 371 squares
-    // We create squares with varying intensities representing commits
-    const totalSquares = 120; // limit on mobile/desktop size
+    // 53 semanas * 7 dias = 371 quadrados
+    // Criamos quadrados com diferentes intensidades representando commits
+    const totalSquares = 120; // limita o tamanho em dispositivos móveis/desktops
     const squares = Array.from({ length: totalSquares }, (_, i) => {
-      // Create pattern: some days have commits, others don't
+      // Cria um padrão: alguns dias têm commits, outros não
       const rand = Math.sin(i * 0.15) * Math.cos(i * 0.3) + Math.random();
       let colorClass = "bg-zinc-100 dark:bg-zinc-900"; // 0 commits
       
-      if (rand > 1.2) colorClass = "bg-emerald-800 dark:bg-emerald-900"; // high
-      else if (rand > 0.8) colorClass = "bg-emerald-600 dark:bg-emerald-700"; // medium
-      else if (rand > 0.3) colorClass = "bg-emerald-400 dark:bg-emerald-500/80"; // low
+      if (rand > 1.2) colorClass = "bg-emerald-800 dark:bg-emerald-900"; // alto
+      else if (rand > 0.8) colorClass = "bg-emerald-600 dark:bg-emerald-700"; // médio
+      else if (rand > 0.3) colorClass = "bg-emerald-400 dark:bg-emerald-500/80"; // baixo
       else if (rand > 0.0) colorClass = "bg-emerald-200 dark:bg-emerald-300/30"; // micro
 
       return <div key={i} className={`w-3.5 h-3.5 rounded-[2px] transition-all hover:scale-130 ${colorClass}`} />;
@@ -68,7 +74,7 @@ export function GithubSection() {
     return (
       <div className="w-full overflow-x-auto no-scrollbar pb-2">
         <div className="flex flex-col gap-1.5 min-w-[620px]">
-          {/* Days grids: 7 rows */}
+          {/* Grades de dias: 7 linhas */}
           <div className="grid grid-flow-col grid-rows-7 gap-1.5 auto-cols-max">
             {squares}
           </div>
@@ -124,7 +130,7 @@ export function GithubSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -146,7 +152,7 @@ export function GithubSection() {
           </motion.h3>
         </div>
 
-        {/* Layout Dashboard Grid */}
+        {/* Grid de Layout do Dashboard */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -155,12 +161,12 @@ export function GithubSection() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
         >
           
-          {/* Left panel: Profile Stats & Calendar */}
+          {/* Painel Esquerdo: Estatísticas do Perfil e Calendário */}
           <div className="lg:col-span-4 space-y-6">
             <motion.div variants={itemVariants}>
               <Card glass className="border-zinc-200/80 dark:border-zinc-800/80">
                 <CardContent className="p-6">
-                  {/* User Profile Info */}
+                  {/* Informações de Perfil do Usuário */}
                   <div className="flex items-center gap-4 mb-6">
                     <img
                       src={user.avatar}
@@ -183,7 +189,7 @@ export function GithubSection() {
                     </div>
                   </div>
 
-                  {/* Profile metrics */}
+                  {/* Métricas de perfil */}
                   <div className="grid grid-cols-3 gap-2 border-y border-zinc-150 dark:border-zinc-900/60 py-4 mb-6 text-center">
                     <div>
                       <span className="block text-xl font-extrabold text-zinc-900 dark:text-white">
@@ -211,7 +217,7 @@ export function GithubSection() {
                     </div>
                   </div>
 
-                  {/* Top Languages */}
+                  {/* Principais Linguagens */}
                   <div>
                     <h5 className="text-xs font-bold uppercase text-zinc-500 dark:text-zinc-400 tracking-wider mb-4 flex items-center gap-1.5">
                       <Code2 className="w-4 h-4 text-indigo-500" />
@@ -224,7 +230,7 @@ export function GithubSection() {
                             <span className="font-semibold text-zinc-700 dark:text-zinc-300">{lang.name}</span>
                             <span className="text-zinc-500">{lang.count} repos</span>
                           </div>
-                          {/* Mini Progress */}
+                          {/* Mini Barra de Progresso */}
                           <div className="w-full h-1 bg-zinc-100 dark:bg-zinc-900/80 rounded-full overflow-hidden">
                             <div
                               className="h-full bg-linear-to-r from-violet-500 to-indigo-500 rounded-full"
@@ -240,7 +246,7 @@ export function GithubSection() {
               </Card>
             </motion.div>
 
-            {/* Contribution Calendar Card */}
+            {/* Card do Calendário de Contribuições */}
             <motion.div variants={itemVariants}>
               <Card glass className="border-zinc-200/80 dark:border-zinc-800/80">
                 <CardContent className="p-6">
@@ -253,7 +259,7 @@ export function GithubSection() {
             </motion.div>
           </div>
 
-          {/* Right panel: Active Repos Grid */}
+          {/* Painel Direito: Grid de Repositórios Ativos */}
           <div className="lg:col-span-8 space-y-6">
             <h5 className="text-sm font-bold uppercase text-zinc-500 dark:text-zinc-400 tracking-widest pl-2">
               {dict.github.repos} Recentes
@@ -275,7 +281,7 @@ export function GithubSection() {
                         </p>
                       </div>
 
-                      {/* Repo footer: tech, stars, forks, external link */}
+                      {/* Rodapé do repositório: tecnologia, estrelas, forks, link externo */}
                       <div className="flex items-center justify-between mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-900/60 text-xs">
                         <div className="flex items-center gap-3">
                           <Badge variant="outline" className="text-[10px] dark:border-zinc-800">

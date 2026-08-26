@@ -1,3 +1,8 @@
+/**
+ * Setor / Seção: Experiência Profissional (Experience)
+ * Exibe a trajetória profissional através de cards organizados, destacando
+ * a empresa, o período de atuação, o cargo ocupado e as principais responsabilidades.
+ */
 "use client";
 
 import { motion } from "framer-motion";
@@ -39,12 +44,12 @@ export function Experience() {
       id="experience"
       className="py-24 relative overflow-hidden bg-white dark:bg-[#030303] transition-colors"
     >
-      {/* Background decoration */}
+      {/* Elementos decorativos de fundo */}
       <div className="absolute bottom-1/4 left-1/4 w-[350px] h-[350px] rounded-full bg-indigo-500/5 glow-orb pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -66,7 +71,7 @@ export function Experience() {
           </motion.h3>
         </div>
 
-        {/* Experience Cards Layout */}
+        {/* Layout de Cards de Experiência */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -77,12 +82,12 @@ export function Experience() {
           {experiences.map((exp, index) => (
             <motion.div variants={itemVariants} key={exp.company} className="h-full">
               <Card hoverEffect glass className="h-full border-zinc-200/80 dark:border-zinc-800/80 flex flex-col justify-between relative">
-                {/* Visual Glow Corner */}
+                {/* Brilho decorativo no canto superior direito */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-linear-to-bl from-indigo-500/10 to-transparent dark:from-indigo-500/5 pointer-events-none rounded-tr-2xl" />
 
                 <CardContent className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div className="space-y-4">
-                    {/* Header Info */}
+                    {/* Informações do cabeçalho do card */}
                     <div className="flex items-center gap-3">
                       <div className="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400">
                         <Briefcase className="w-5 h-5" />
@@ -98,19 +103,19 @@ export function Experience() {
                       </div>
                     </div>
 
-                    {/* Company Tag */}
+                    {/* Tag da Empresa */}
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-zinc-200/60 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/50 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
                       <Building2 className="w-3.5 h-3.5" />
                       {exp.company}
                     </div>
 
-                    {/* Description */}
+                    {/* Descrição das atividades */}
                     <p className="text-sm text-zinc-550 dark:text-zinc-400 leading-relaxed pt-2">
                       {exp.description}
                     </p>
                   </div>
 
-                  {/* Badge representing order of timeline */}
+                  {/* Indicador da ordem cronológica da experiência */}
                   <div className="mt-8 text-right text-[10px] text-zinc-400 dark:text-zinc-600 font-mono select-none">
                     0{index + 1} / 03
                   </div>

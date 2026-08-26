@@ -1,3 +1,8 @@
+/**
+ * Setor / Seção: Certificações (Certifications)
+ * Exibe as certificações do profissional, buscando-as em tempo real via API do Credly
+ * se disponível, ou renderizando dados estáticos traduzidos como alternativa.
+ */
 "use client";
 
 import { motion } from "framer-motion";
@@ -19,7 +24,7 @@ interface Certification {
 export function Certifications() {
   const { dict } = useLocale();
 
-  // Load live Credly badges from our local API endpoint
+  // Carrega badges do Credly em tempo real a partir de nossa API local
   const { data: liveBadges, isLoading } = useQuery<Certification[]>({
     queryKey: ["credly-badges"],
     queryFn: async () => {
@@ -30,7 +35,7 @@ export function Certifications() {
     retry: 1,
   });
 
-  // Decide source: live if available and not empty, otherwise fallback to dict certifications
+  // Define a fonte: dados em tempo real se disponíveis, caso contrário usa os dados estáticos do dicionário (fallback)
   const certifications: Certification[] =
     liveBadges && liveBadges.length > 0 ? liveBadges : dict.certifications.list;
 
@@ -56,12 +61,12 @@ export function Certifications() {
       id="certifications"
       className="py-24 relative overflow-hidden bg-zinc-50 dark:bg-[#030303]/40 border-y border-zinc-100 dark:border-zinc-900/60 transition-colors"
     >
-      {/* Background decoration */}
+      {/* Elementos decorativos de fundo */}
       <div className="absolute top-1/3 right-0 w-80 h-80 rounded-full bg-violet-500/5 glow-orb pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -83,7 +88,7 @@ export function Certifications() {
           </motion.h3>
         </div>
 
-        {/* Certifications Grid */}
+        {/* Grade/Grid de Certificações */}
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3].map((n) => (
@@ -107,7 +112,7 @@ export function Certifications() {
                   <CardContent className="p-6 flex-1 flex flex-col justify-between">
                     <div className="space-y-4">
                       
-                      {/* Badge image or icon */}
+                      {/* Imagem ou ícone da certificação/badge */}
                       <div className="flex items-start justify-between">
                         {cert.image ? (
                           <img
@@ -127,7 +132,7 @@ export function Certifications() {
                         </span>
                       </div>
 
-                      {/* Info */}
+                      {/* Informações da certificação */}
                       <div>
                         <h4 className="text-md font-bold text-zinc-900 dark:text-white line-clamp-2">
                           {cert.name}
@@ -139,7 +144,7 @@ export function Certifications() {
 
                     </div>
 
-                    {/* Action Verify */}
+                    {/* Ação de Verificação / Botão de visualização */}
                     <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-900/60">
                       <a
                         href={cert.credentialUrl}

@@ -1,3 +1,9 @@
+/**
+ * Setor / Seção: Rodapé (Footer)
+ * Rodapé da página contendo informações sobre o profissional, links rápidos
+ * para contato e redes sociais, informações de copyright e detalhes das
+ * tecnologias empregadas no desenvolvimento do site.
+ */
 "use client";
 
 import { Mail, Phone } from "lucide-react";
@@ -34,7 +40,7 @@ export function Footer() {
     <footer className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#030303] py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Brand */}
+          {/* Informações da Marca / Identidade */}
           <div className="text-center md:text-left">
             <span className="text-base font-bold text-zinc-900 dark:text-white">
               Vinicius Silva de Andrade
@@ -44,7 +50,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Social Links */}
+          {/* Links Sociais */}
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
               <a
