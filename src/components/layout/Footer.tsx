@@ -16,7 +16,7 @@ export function Footer() {
   const socialLinks = [
     {
       icon: <GithubIcon className="w-5 h-5" />,
-      url: "https://github.com/lisboainformatica",
+      url: "https://github.com/vinicius-andrade-dev",
       label: "GitHub",
     },
     {
