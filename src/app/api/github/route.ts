@@ -13,7 +13,7 @@ export async function GET() {
     }
 
     // 1. Fetch user profile
-    const profileRes = await fetch("https://api.github.com/users/lisboainformatica", {
+    const profileRes = await fetch("https://api.github.com/users/vinicius-andrade-dev", {
       headers,
       next: { revalidate: 3600 },
     });
@@ -26,7 +26,7 @@ export async function GET() {
 
     // 2. Fetch user repositories (up to 30 to calculate aggregate stats)
     const reposRes = await fetch(
-      "https://api.github.com/users/lisboainformatica/repos?sort=updated&per_page=30",
+      "https://api.github.com/users/vinicius-andrade-dev/repos?sort=updated&per_page=30",
       {
         headers,
         next: { revalidate: 3600 },
@@ -95,10 +95,10 @@ export async function GET() {
     // Return a structured mockup data if API is down or rate-limited
     return NextResponse.json({
       user: {
-        avatar: "https://github.com/lisboainformatica.png",
-        login: "lisboainformatica",
+        avatar: "https://github.com/vinicius-andrade-dev.png",
+        login: "vinicius-andrade-dev",
         name: "Vinicius Silva",
-        url: "https://github.com/lisboainformatica",
+        url: "https://github.com/vinicius-andrade-dev",
         publicRepos: 18,
         followers: 12,
       },
@@ -120,7 +120,7 @@ export async function GET() {
           stars: 5,
           forks: 2,
           language: "TypeScript",
-          url: "https://github.com/lisboainformatica/protocolo360",
+          url: "https://github.com/vinicius-andrade-dev/protocolo360",
         },
         {
           name: "ubs",
@@ -128,7 +128,7 @@ export async function GET() {
           stars: 4,
           forks: 2,
           language: "TypeScript",
-          url: "https://github.com/lisboainformatica/ubs",
+          url: "https://github.com/vinicius-andrade-dev/ubs",
         },
         {
           name: "warehouse-mvp",
@@ -136,7 +136,7 @@ export async function GET() {
           stars: 3,
           forks: 1,
           language: "JavaScript",
-          url: "https://github.com/lisboainformatica/warehouse-mvp",
+          url: "https://github.com/vinicius-andrade-dev/warehouse-mvp",
         },
         {
           name: "api-rest-node",
@@ -144,7 +144,7 @@ export async function GET() {
           stars: 2,
           forks: 1,
           language: "TypeScript",
-          url: "https://github.com/lisboainformatica",
+          url: "https://github.com/vinicius-andrade-dev",
         },
       ],
     });
