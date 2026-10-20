@@ -26,7 +26,7 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait" initial={false}>
-        {currentTheme === "dark" ? (
+        {currentTheme === "light" ? (
           <motion.div
             key="sun"
             initial={{ y: 20, opacity: 0, rotate: 45 }}
