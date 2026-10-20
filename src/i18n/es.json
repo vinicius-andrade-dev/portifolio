@@ -67,6 +67,61 @@
     "active": "En Línea",
     "list": [
       {
+        "id": "agendaubs",
+        "name": "AgendaUBS",
+        "tagline": "Gestión de citas de atención primaria",
+        "description": "Aplicación full stack para organizar citas y flujos de atención en unidades básicas de salud, con API Java, interfaz Angular y persistencia PostgreSQL.",
+        "problemText": "La gestión de horarios, profesionales y citas requiere reglas consistentes y flujos claros.",
+        "solutionText": "Proyecto full stack con backend REST en Spring Boot, frontend Angular y persistencia relacional, centrado en reglas de negocio y organización modular.",
+        "architectureText": "Java 21, Spring Boot, Angular, PostgreSQL, Flyway y Docker Compose.",
+        "challengesText": "Modelar reglas de citas, separar responsabilidades entre frontend y backend y estructurar la persistencia.",
+        "resultsText": "Proyecto personal/académico que demuestra integración full stack, modelado de datos y pruebas automatizadas. Consulta el repositorio para conocer el alcance actual."
+      },
+      {
+        "id": "pix-simulator",
+        "name": "Pix Simulator",
+        "tagline": "Simulador educativo de operaciones financieras",
+        "description": "API de estudio para explorar consistencia transaccional, idempotencia y concurrencia en operaciones simuladas. No procesa transferencias Pix reales.",
+        "problemText": "Las operaciones concurrentes y las solicitudes repetidas pueden causar inconsistencias sin controles adecuados.",
+        "solutionText": "Proyecto de simulación para estudiar validación, autenticación y tratamiento consistente de operaciones concurrentes.",
+        "architectureText": "NestJS, TypeScript, PostgreSQL, Prisma, Redis, Docker y Nginx.",
+        "challengesText": "Explorar idempotencia, concurrencia, consistencia transaccional y límites de solicitudes en una aplicación educativa.",
+        "resultsText": "Demuestra conceptos de backend e infraestructura. No está integrado con bancos, SPI ni el sistema Pix real."
+      },
+      {
+        "id": "ultimate-saas-api",
+        "name": "Ultimate SaaS API",
+        "tagline": "API backend Node.js por capas",
+        "description": "API backend que explora autenticación, persistencia relacional, caché y separación de responsabilidades en una estructura orientada a SaaS.",
+        "problemText": "Las API de negocio necesitan organizar reglas, persistencia y autenticación para facilitar el mantenimiento.",
+        "solutionText": "Implementación de endpoints y capas de acceso a datos con autenticación mediante tokens y soporte de caché.",
+        "architectureText": "Node.js, Express, MySQL, Knex, Redis, JWT, Docker y logging con Pino.",
+        "challengesText": "Organizar la arquitectura, estandarizar logs y gestionar autenticación y acceso a datos de forma consistente.",
+        "resultsText": "Proyecto demostrativo de arquitectura backend. Consulta el código y la documentación del repositorio para conocer el estado actual."
+      },
+      {
+        "id": "securehub",
+        "name": "SecureHub",
+        "tagline": "Gestión de usuarios y demostraciones de seguridad",
+        "description": "Proyecto demostrativo para gestión de usuarios, registros de actividad, niveles de permisos y conceptos de protección de datos.",
+        "problemText": "Las aplicaciones internas necesitan controlar el acceso a recursos y ofrecer visibilidad sobre la actividad de los usuarios.",
+        "solutionText": "Plataforma de demostración con funciones de gestión y ejemplos educativos relacionados con seguridad y scripts de red.",
+        "architectureText": "APIs en Python y Java, SQLite y scripts demostrativos de red/seguridad.",
+        "challengesText": "Separar permisos por nivel y presentar conceptos de seguridad sin sugerir que los scripts de demostración sustituyen una solución de producción.",
+        "resultsText": "Proyecto educativo; requiere pruebas y revisión de seguridad antes de cualquier uso en producción."
+      },
+      {
+        "id": "jitterbit-api",
+        "name": "Jitterbit Order API",
+        "tagline": "API REST para gestión de pedidos",
+        "description": "API Node.js para gestionar pedidos, con autenticación y documentación de endpoints para facilitar integración y pruebas.",
+        "problemText": "Los servicios de pedidos necesitan operaciones previsibles y validación de los datos recibidos.",
+        "solutionText": "API REST con rutas organizadas, validación de entrada, autenticación y documentación interactiva.",
+        "architectureText": "Node.js, Express, MongoDB, Mongoose, JWT, Joi y Swagger.",
+        "challengesText": "Combinar validación, autorización y documentación en una API que otros clientes puedan explorar.",
+        "resultsText": "Proyecto de portafolio centrado en fundamentos backend. Consulta el repositorio para ver endpoints e instrucciones actuales."
+      },
+      {
         "id": "protocolo360",
         "name": "Protocolo 360",
         "tagline": "SaaS Multi-Tenant de Protocolos y Documentos",
@@ -86,18 +141,18 @@
         "solutionText": "Desarrollo de una aplicación Next.js corporativa conectada a base PostgreSQL. Implementación de una arquitectura multi-inquilino (Multi-Tenant) con aislamiento de datos, encriptación selectiva y filtros RBAC dinámicos.",
         "architectureText": "Next.js (App Router), backend Node.js, Prisma ORM para consultas SQL optimizadas con PostgreSQL. Caché y colas en Redis, y contenedorización total de entornos con Docker.",
         "challengesText": "Garantizar el cumplimiento de las normativas de protección de datos (LGPD) y evitar problemas de doble reserva en tiempo real con accesos simultáneos y de alta concurrencia.",
-        "resultsText": "Reducción del 45% en el tiempo de asignación de citas, trazabilidad del 100% en el acceso a datos y seguridad legal garantizada."
+        "resultsText": "Consulta el repositorio para revisar el alcance implementado y el estado actual del proyecto."
       },
       {
         "id": "warehouse",
         "name": "Sistema de Almacén",
         "tagline": "Control de Inventario y Movimiento de Insumos",
-        "description": "Aplicación empresarial completa para registrar la entrada, salida e inventario físico de insumos con alertas de stock y paneles analíticos en tiempo real.",
+        "description": "Aplicación web para gestionar artículos, proveedores, categorías y movimientos de inventario, con panel e informes.",
         "problemText": "Falta de control real en almacenes de insumos, pérdidas financieras por productos vencidos y lentitud en los reportes manuales periódicos.",
-        "solutionText": "Creación de un portal de inventario reactivo con control de sesiones por JWT, historial transaccional de insumos y notificaciones automáticas de stock mínimo.",
+        "solutionText": "Gestión de artículos y trazabilidad de movimientos, alertas de stock mínimo e informes.",
         "architectureText": "Frontend de Next.js con Server Actions, base de datos NoSQL MongoDB para flexibilidad de documentos y gráficos interactivos con Recharts.",
         "challengesText": "Sincronizar las transacciones en tiempo real entre múltiples ubicaciones físicas y renderizar los reportes sin retrasar la interfaz del usuario.",
-        "resultsText": "Eliminación del 98% en discrepancias de inventario físico, alertas inteligentes de reabastecimiento y credenciales de prueba listas para demostración pública."
+        "resultsText": "Consulta el repositorio para revisar el alcance implementado y el estado actual del proyecto."
       },
       {
         "id": "api-rest",
@@ -108,7 +163,7 @@
         "solutionText": "Desarrollo de una API en Express y MongoDB estructurada con patrones de diseño, manejo global de errores y validaciones automáticas de solicitudes.",
         "architectureText": "Node.js con Express, TypeScript para tipos estáticos, MongoDB + Mongoose, JWT para la seguridad de sesión y Swagger UI para documentación.",
         "challengesText": "Implementar un flujo de JWT seguro con rotación automática de tokens y la configuración de pruebas automatizadas unitarias y de integración.",
-        "resultsText": "Tiempo medio de respuesta inferior a 40ms, cobertura del 90% en pruebas automatizadas e integración inmediata de equipos mediante Swagger."
+        "resultsText": "Consulta el repositorio para revisar el alcance implementado y el estado actual del proyecto."
       }
     ]
   },
