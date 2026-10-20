@@ -144,7 +144,7 @@ export function Contact() {
                 <LinkedinIcon className="w-5 h-5" /> LinkedIn
               </a>
               <a
-                href="https://github.com/lisboainformatica"
+                href="https://github.com/vinicius-andrade-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm font-bold text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
