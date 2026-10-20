@@ -238,7 +238,30 @@ export function Projects() {
           </div>
         );
       default:
-        return null;
+        return (
+          <div className="w-full min-h-[220px] rounded-2xl bg-zinc-950 p-5 border border-zinc-800/80 flex flex-col text-xs font-mono text-zinc-400 shadow-inner">
+            <div className="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+              </div>
+              <span className="text-[10px] text-zinc-500 uppercase tracking-widest">PROJECT OVERVIEW</span>
+            </div>
+            <div className="flex-1 flex flex-col justify-center gap-3">
+              <div className="rounded-lg border border-indigo-500/20 bg-indigo-500/10 p-3">
+                <span className="block text-indigo-300 font-semibold">Application / API</span>
+                <span className="block text-zinc-500 mt-1">Architecture · Validation · Persistence</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="rounded-md bg-zinc-900 p-2 text-center text-zinc-400">Routes</div>
+                <div className="rounded-md bg-zinc-900 p-2 text-center text-zinc-400">Data</div>
+                <div className="rounded-md bg-zinc-900 p-2 text-center text-zinc-400">Tests</div>
+              </div>
+              <p className="text-[10px] text-zinc-600">Illustrative preview · See source repository for implementation details</p>
+            </div>
+          </div>
+        );
     }
   };
 
