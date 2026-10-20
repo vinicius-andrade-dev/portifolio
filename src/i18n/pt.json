@@ -67,6 +67,61 @@
     "active": "Online",
     "list": [
       {
+        "id": "agendaubs",
+        "name": "AgendaUBS",
+        "tagline": "Sistema de agendamento para atenção básica",
+        "description": "Aplicação full stack para organizar agendamentos e fluxos de atendimento em unidades básicas de saúde, com API Java, interface Angular e persistência PostgreSQL.",
+        "problemText": "Organizar horários, profissionais e atendimentos exige regras consistentes e uma visão clara dos fluxos da unidade.",
+        "solutionText": "Projeto full stack que reúne backend REST com Spring Boot, frontend Angular e persistência relacional, com foco em regras de negócio e organização dos módulos.",
+        "architectureText": "Java 21, Spring Boot, Angular, PostgreSQL, Flyway e Docker Compose.",
+        "challengesText": "Modelar regras de agendamento, separar responsabilidades entre frontend e backend e manter a persistência estruturada.",
+        "resultsText": "Projeto acadêmico/pessoal para demonstrar integração full stack, modelagem de dados e testes automatizados. Consulte o repositório para ver o escopo atual."
+      },
+      {
+        "id": "pix-simulator",
+        "name": "Pix Simulator",
+        "tagline": "Simulador educacional de operações financeiras",
+        "description": "API de estudo para explorar consistência transacional, idempotência e concorrência em operações simuladas. Não realiza transações Pix reais.",
+        "problemText": "Operações concorrentes e requisições repetidas podem causar inconsistências quando não há controles adequados.",
+        "solutionText": "Projeto de simulação para estudar validações, autenticação e tratamento consistente de operações concorrentes.",
+        "architectureText": "NestJS, TypeScript, PostgreSQL, Prisma, Redis, Docker e Nginx.",
+        "challengesText": "Explorar idempotência, concorrência, consistência de transações e limites de requisição em uma aplicação educacional.",
+        "resultsText": "Demonstra conceitos de backend e infraestrutura. Não possui integração com bancos, SPI ou sistema Pix real."
+      },
+      {
+        "id": "ultimate-saas-api",
+        "name": "Ultimate SaaS API",
+        "tagline": "API Node.js com organização por camadas",
+        "description": "API backend que explora autenticação, persistência relacional, cache e separação de responsabilidades em uma estrutura voltada a SaaS.",
+        "problemText": "APIs de negócio precisam organizar regras, persistência e autenticação de forma que facilite manutenção e evolução.",
+        "solutionText": "Implementação de endpoints e camadas de acesso a dados com autenticação baseada em tokens e suporte a cache.",
+        "architectureText": "Node.js, Express, MySQL, Knex, Redis, JWT, Docker e Pino para logging.",
+        "challengesText": "Organizar a arquitetura, padronizar logs e tratar autenticação e acesso a dados de forma consistente.",
+        "resultsText": "Projeto demonstrativo de arquitetura backend. Confira o código e a documentação do repositório para o estado atual das funcionalidades."
+      },
+      {
+        "id": "securehub",
+        "name": "SecureHub",
+        "tagline": "Gestão de usuários e demonstrações de segurança",
+        "description": "Projeto demonstrativo voltado à gestão de usuários, registros de atividades, níveis de permissão e conceitos de proteção de dados.",
+        "problemText": "Aplicações internas precisam controlar quem pode acessar recursos e manter uma visão rastreável das atividades.",
+        "solutionText": "Plataforma de demonstração com funcionalidades de gestão e exemplos educacionais relacionados a segurança e scripts de rede.",
+        "architectureText": "APIs em Python e Java, SQLite e scripts demonstrativos de rede/segurança.",
+        "challengesText": "Separar permissões por nível e apresentar conceitos de segurança sem sugerir que scripts demonstrativos substituem uma solução de produção.",
+        "resultsText": "Projeto educacional; requer avaliação, testes e revisão de segurança antes de qualquer uso em produção."
+      },
+      {
+        "id": "jitterbit-api",
+        "name": "Jitterbit Order API",
+        "tagline": "API REST para gerenciamento de pedidos",
+        "description": "API Node.js para gerenciamento de pedidos, com autenticação e documentação de endpoints para facilitar integração e testes.",
+        "problemText": "Serviços de pedidos precisam expor operações de forma previsível e validar os dados recebidos.",
+        "solutionText": "API REST com rotas organizadas, validação de entrada, autenticação e documentação interativa.",
+        "architectureText": "Node.js, Express, MongoDB, Mongoose, JWT, Joi e Swagger.",
+        "challengesText": "Combinar validação, autorização e documentação em uma API que possa ser explorada por outros clientes.",
+        "resultsText": "Projeto de portfólio focado em fundamentos de backend. Consulte o repositório para conferir endpoints e instruções atuais."
+      },
+      {
         "id": "protocolo360",
         "name": "Protocolo 360",
         "tagline": "SaaS Multi-Tenant de Protocolos e Documentos",
@@ -86,18 +141,18 @@
         "solutionText": "Desenvolvimento de uma aplicação Next.js corporativa com banco PostgreSQL. Implementação de arquitetura multi-inquilino (Multi-Tenant) isolando os dados de cada clínica, com criptografia ponta a ponta e controle granular de permissões.",
         "architectureText": "Estrutura modular no Next.js (App Router), Node.js no backend, Prisma ORM para transações eficientes com PostgreSQL. Cache e filas de tarefas com Redis e conteinerização completa do ambiente com Docker para escalabilidade.",
         "challengesText": "Garantir a total privacidade dos dados clínicos (LGPD) e criar um sistema de agendamento em tempo real resiliente a conflitos de concorrência quando múltiplos recepcionistas agendam horários simultaneamente.",
-        "resultsText": "Redução de 45% no tempo de espera para agendamentos, segurança da informação 100% auditável e conformidade legal garantida contra acessos não autorizados."
+        "resultsText": "Consulte o repositório para conferir o escopo implementado e o estado atual do projeto."
       },
       {
         "id": "warehouse",
         "name": "Sistema de Almoxarifado",
         "tagline": "Controle de Estoque e Fluxo de Insumos",
-        "description": "Sistema completo corporativo para gestão, entrada, saída e inventário de mercadorias com dashboard analítico e relatórios em tempo real.",
+        "description": "Aplicação web para gestão de itens, fornecedores, categorias e movimentações de estoque, com dashboard e relatórios.",
         "problemText": "Falta de controle preciso no estoque de almoxarifados, perdas financeiras por expiração de produtos e relatórios de fluxo gerados manualmente de forma lenta e imprecisa.",
-        "solutionText": "Criação de um sistema com interface reativa, autenticação JWT, cadastro de insumos com rastreabilidade detalhada de movimentação e alertas de estoque mínimo.",
+        "solutionText": "Cadastro e rastreabilidade de movimentações, alertas de estoque mínimo e recursos de relatório.",
         "architectureText": "Front-end SPA e Server Actions com Next.js, banco NoSQL MongoDB para flexibilidade de esquemas de insumos, gráficos analíticos interativos usando Recharts.",
         "challengesText": "Sincronização de dados de múltiplos estoques físicos e geração instantânea de gráficos analíticos pesados sem sobrecarregar a Thread principal do cliente.",
-        "resultsText": "Eliminação de divergências de estoque físico em 98%, aumento de eficiência na reposição de itens e controle gerencial imediato com login de teste disponibilizado."
+        "resultsText": "Consulte o repositório para conferir o escopo implementado e o estado atual do projeto."
       },
       {
         "id": "api-rest",
@@ -108,7 +163,7 @@
         "solutionText": "Construção de uma API limpa utilizando Express e MongoDB, implementando boas práticas de Design Patterns, tratamento global de erros e validação de payloads de requisição.",
         "architectureText": "Node.js com Express, TypeScript para segurança de tipos, MongoDB + Mongoose, JWT para sessões sem estado e Swagger para documentação interativa.",
         "challengesText": "Configurar autenticação JWT robusta com rotação de tokens (Refresh Tokens) e estruturar testes unitários/integração para garantir estabilidade contínua.",
-        "resultsText": "Tempo de resposta médio abaixo de 40ms, cobertura completa de testes em 90% e integração instantânea para novos desenvolvedores através do Swagger."
+        "resultsText": "Consulte o repositório para conferir o escopo implementado e o estado atual do projeto."
       }
     ]
   },
