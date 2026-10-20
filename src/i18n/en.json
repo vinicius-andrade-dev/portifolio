@@ -67,6 +67,61 @@
     "active": "Online",
     "list": [
       {
+        "id": "agendaubs",
+        "name": "AgendaUBS",
+        "tagline": "Primary healthcare appointment management",
+        "description": "A full-stack application to organize appointments and care workflows in primary healthcare units, with a Java API, Angular interface, and PostgreSQL persistence.",
+        "problemText": "Managing schedules, professionals, and appointments requires consistent rules and clear workflows.",
+        "solutionText": "A full-stack project combining a Spring Boot REST backend, Angular frontend, and relational persistence, focused on business rules and modular organization.",
+        "architectureText": "Java 21, Spring Boot, Angular, PostgreSQL, Flyway, and Docker Compose.",
+        "challengesText": "Modeling appointment rules, separating frontend and backend responsibilities, and keeping persistence structured.",
+        "resultsText": "Personal/academic project demonstrating full-stack integration, data modeling, and automated testing. Check the repository for current scope."
+      },
+      {
+        "id": "pix-simulator",
+        "name": "Pix Simulator",
+        "tagline": "Educational financial operations simulator",
+        "description": "A study API for exploring transaction consistency, idempotency, and concurrency in simulated operations. It does not process real Pix transfers.",
+        "problemText": "Concurrent operations and repeated requests can cause inconsistencies without appropriate controls.",
+        "solutionText": "A simulation project to study validation, authentication, and consistent handling of concurrent operations.",
+        "architectureText": "NestJS, TypeScript, PostgreSQL, Prisma, Redis, Docker, and Nginx.",
+        "challengesText": "Exploring idempotency, concurrency, transaction consistency, and rate limiting in an educational application.",
+        "resultsText": "Demonstrates backend and infrastructure concepts. It is not integrated with banks, the SPI, or the real Pix system."
+      },
+      {
+        "id": "ultimate-saas-api",
+        "name": "Ultimate SaaS API",
+        "tagline": "Layered Node.js backend API",
+        "description": "A backend API exploring authentication, relational persistence, caching, and separation of concerns in a SaaS-oriented structure.",
+        "problemText": "Business APIs need clear organization of business rules, persistence, and authentication to remain maintainable.",
+        "solutionText": "Implementation of endpoints and data-access layers with token-based authentication and cache support.",
+        "architectureText": "Node.js, Express, MySQL, Knex, Redis, JWT, Docker, and Pino logging.",
+        "challengesText": "Structuring the architecture, standardizing logs, and handling authentication and data access consistently.",
+        "resultsText": "Backend architecture demo. Check the repository documentation and code for current functionality."
+      },
+      {
+        "id": "securehub",
+        "name": "SecureHub",
+        "tagline": "User management and security demonstrations",
+        "description": "A demo project for user management, activity records, permission levels, and data-protection concepts.",
+        "problemText": "Internal applications need to control access to resources and provide visibility into user activity.",
+        "solutionText": "A demonstration platform with management features and educational examples related to security and network scripts.",
+        "architectureText": "Python and Java APIs, SQLite, and demonstration network/security scripts.",
+        "challengesText": "Separating permissions by role and presenting security concepts without implying demo scripts replace production-grade solutions.",
+        "resultsText": "Educational project; requires testing and security review before any production use."
+      },
+      {
+        "id": "jitterbit-api",
+        "name": "Jitterbit Order API",
+        "tagline": "REST API for order management",
+        "description": "A Node.js API for order management, with authentication and endpoint documentation to support integration and testing.",
+        "problemText": "Order services need predictable operations and validation of incoming data.",
+        "solutionText": "A REST API with organized routes, input validation, authentication, and interactive documentation.",
+        "architectureText": "Node.js, Express, MongoDB, Mongoose, JWT, Joi, and Swagger.",
+        "challengesText": "Combining validation, authorization, and documentation in an API that other clients can explore.",
+        "resultsText": "Portfolio project focused on backend fundamentals. Check the repository for current endpoints and setup instructions."
+      },
+      {
         "id": "protocolo360",
         "name": "Protocolo 360",
         "tagline": "Multi-Tenant SaaS Protocol & Document Management",
@@ -86,18 +141,18 @@
         "solutionText": "Developed a Multi-Tenant Next.js web application using a PostgreSQL database. Implemented secure multi-tenant isolation, encrypting sensitive fields, and enforcing strict RBAC layers to restrict data access dynamically.",
         "architectureText": "Next.js (App Router), Node.js API backend, Prisma ORM for efficient PostgreSQL transactions. Caching and message queues via Redis, and complete environment containerization with Docker.",
         "challengesText": "Ensuring strict LGPD compliance for electronic medical records and preventing double-booking scheduling conflicts when multiple receptionists transact at the exact same millisecond.",
-        "resultsText": "Reduced patient booking wait times by 45%, achieved 100% auditability of file accesses, and guaranteed legal compliance across clinics."
+        "resultsText": "Check the repository to review the implemented scope and current project status."
       },
       {
         "id": "warehouse",
         "name": "Warehouse Management System",
         "tagline": "Inventory and Influx Tracking Control",
-        "description": "A robust business inventory application to track item entries, exits, stock alerts, complete with interactive analytical dashboards and real-time reports.",
+        "description": "A web application for managing items, suppliers, categories, and stock movements, with a dashboard and reports.",
         "problemText": "Lack of real-time control over warehouse items, financial losses due to expired goods, and slow manual reporting processes prone to human error.",
-        "solutionText": "Created a reactive inventory app featuring secure JWT sessions, structured stock transaction logging, and automated low-stock warnings.",
+        "solutionText": "Item management and traceable stock movements, low-stock alerts, and reporting features.",
         "architectureText": "Next.js frontend and Server Actions, MongoDB database for schema-less item versatility, and rich interactive analytical graphics via Recharts.",
         "challengesText": "Synchronizing stock calculations across separate physical warehouse warehouses and generating heavy interactive charts without degrading browser UI responsiveness.",
-        "resultsText": "Eliminated inventory data discrepancies by 98%, automated item replenishment triggers, and deployed a live demo with test login details."
+        "resultsText": "Check the repository to review the implemented scope and current project status."
       },
       {
         "id": "api-rest",
@@ -108,7 +163,7 @@
         "solutionText": "Engineered a clean Express API using MongoDB, applying modern Design Patterns, structured routing, global error middleware, and strict request schema validations.",
         "architectureText": "Node.js with Express, TypeScript for static type safety, MongoDB + Mongoose ODM, JWT for stateless sessions, and Swagger UI for documentation.",
         "challengesText": "Implementing a secure JWT workflow with rotating Refresh Tokens and setting up mock testing suites to assert reliable service coverage.",
-        "resultsText": "Achieved average API response times below 40ms, 90% unit test coverage, and enabled seamless onboarding for external teams via live Swagger documentation."
+        "resultsText": "Check the repository to review the implemented scope and current project status."
       }
     ]
   },
