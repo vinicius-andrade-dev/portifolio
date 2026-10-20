@@ -7,7 +7,8 @@
     "experience": "Experience",
     "certifications": "Certifications",
     "github": "GitHub",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resume": "Resume"
   },
   "hero": {
     "greeting": "Hi, my name is",
@@ -322,5 +323,19 @@
       "email": "Please enter a valid email address.",
       "message": "Message must be at least 10 characters long."
     }
+  },
+  "resume": {
+    "title": "Professional resume",
+    "subtitle": "Choose the version that best matches the opportunity.",
+    "fullStack": "Junior Full Stack Developer",
+    "fullStackDescription": "Broad profile focused on web development, APIs, databases, and front-end/back-end integration.",
+    "backEnd": "Junior Back-end Developer",
+    "backEndDescription": "Tailored to REST APIs, Node.js, TypeScript, NestJS, authentication, databases, and business rules.",
+    "download": "Download PDF resume",
+    "viewOnline": "View resume",
+    "preparing": "Dedicated version in preparation",
+    "backEndProjects": "View back-end projects",
+    "format": "PDF · ATS-friendly · English",
+    "preparingNote": "The Back-end version will be available once the tailored resume is finalized."
   }
 }
