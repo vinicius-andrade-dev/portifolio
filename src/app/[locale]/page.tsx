@@ -7,6 +7,7 @@ import { Certifications } from "@/components/sections/Certifications";
 import { GithubSection } from "@/components/sections/Github";
 import { Stats } from "@/components/sections/Stats";
 import { Contact } from "@/components/sections/Contact";
+import { Resume } from "@/components/sections/Resume";
 
 export default async function PortfolioPage() {
   return (
@@ -19,6 +20,7 @@ export default async function PortfolioPage() {
       <Certifications />
       <GithubSection />
       <Stats />
+      <Resume />
       <Contact />
     </>
   );
