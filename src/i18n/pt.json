@@ -125,23 +125,23 @@
         "id": "protocolo360",
         "name": "Protocolo 360",
         "tagline": "SaaS Multi-Tenant de Protocolos e Documentos",
-        "description": "Um sistema SaaS profissional para cadastro, tramitação, acompanhamento e consulta pública de documentos administrativos com número único de protocolo. Projetado sob o conceito de isolamento lógico em banco de dados, permite o uso simultâneo de múltiplas organizações com segurança absoluta.",
+        "description": "Sistema em desenvolvimento para cadastro, tramitação e consulta de documentos administrativos, com foco em organização modular e isolamento lógico entre organizações.",
         "problemText": "Organizações públicas e privadas necessitam de controle rigoroso e histórico de trâmites de documentos administrativos de forma centralizada e sem risco de vazamento de dados confidenciais entre diferentes inquilinos (tenants).",
-        "solutionText": "Desenvolvimento de arquitetura multi-tenant com isolamento em nível de ORM (Prisma Middleware/Extension) e controle de acesso RBAC de três níveis (MASTER, ADMIN, OPERADOR). Inclui consulta pública com ofuscamento automático de dados sensíveis e logs imutáveis de auditoria.",
+        "solutionText": "Estrutura multi-tenant com controle de acesso por papéis e recursos de consulta e auditoria previstos no projeto. Consulte o código para confirmar o estado de cada funcionalidade.",
         "architectureText": "Backend NestJS modular com Prisma ORM (v7) e PostgreSQL. Isolamento automatizado via AsyncLocalStorage (injetando filters no Prisma context). Cache e limitador com Redis. Frontend com Next.js 15+ App Router, Tailwind CSS, Shadcn/UI e TanStack Query.",
         "challengesText": "Resolução do padrão de conexão do Prisma 7, injeção automática de filtros em lote (transactions) sem quebrar o TypeScript, compatibilidade nodenext no editor e metadados de decoradores de interfaces no NestJS.",
-        "resultsText": "Implementação de um sistema SaaS escalável de nível corporativo com isolamento de dados 100% à prova de falhas em tempo de desenvolvimento. Suporta prefixos customizados por tenant e auditoria completa."
+        "resultsText": "Projeto em evolução para explorar arquitetura multi-tenant, controle de acesso e rastreabilidade. O estado real deve ser conferido no repositório."
       },
       {
         "id": "ubs",
         "name": "PSF Digital (UBS)",
         "tagline": "Sistema de Gestão de Unidades Básicas de Saúde",
-        "description": "Uma plataforma completa para gerenciamento de agendas, médicos e prontuários em Unidades Básicas de Saúde (UBS). Conta com controle de acesso robusto (RBAC) e conformidade completa com a LGPD.",
+        "description": "Aplicação web voltada à gestão de rotinas de unidades básicas de saúde, com foco em agendamentos, registros e organização de informações.",
         "problemText": "Unidades de saúde públicas enfrentam gargalos no agendamento de consultas, filas de espera desorganizadas, vazamento de dados de prontuários sensíveis e dificuldade de integração de dados entre filiais (Multi-Tenant).",
-        "solutionText": "Desenvolvimento de uma aplicação Next.js corporativa com banco PostgreSQL. Implementação de arquitetura multi-inquilino (Multi-Tenant) isolando os dados de cada clínica, com criptografia ponta a ponta e controle granular de permissões.",
-        "architectureText": "Estrutura modular no Next.js (App Router), Node.js no backend, Prisma ORM para transações eficientes com PostgreSQL. Cache e filas de tarefas com Redis e conteinerização completa do ambiente com Docker para escalabilidade.",
-        "challengesText": "Garantir a total privacidade dos dados clínicos (LGPD) e criar um sistema de agendamento em tempo real resiliente a conflitos de concorrência quando múltiplos recepcionistas agendam horários simultaneamente.",
-        "resultsText": "Consulte o repositório para conferir o escopo implementado e o estado atual do projeto."
+        "solutionText": "Projeto com estrutura Next.js e persistência PostgreSQL, explorando separação de módulos e controle de acesso. Confira o repositório para ver as funcionalidades implementadas.",
+        "architectureText": "Next.js, TypeScript, PostgreSQL, Prisma e Docker; componentes e serviços podem variar conforme o estado atual do repositório.",
+        "challengesText": "Organizar fluxos de agendamento e proteger informações sensíveis, considerando validação, autorização e rastreabilidade.",
+        "resultsText": "Projeto pessoal em desenvolvimento. Não representa certificação de conformidade legal nem substitui uma avaliação de segurança."
       },
       {
         "id": "warehouse",
