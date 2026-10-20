@@ -27,6 +27,7 @@ export function Navbar() {
     { id: "projects", label: dict.nav.projects },
     { id: "experience", label: dict.nav.experience },
     { id: "certifications", label: dict.nav.certifications },
+    { id: "resume", label: dict.nav.resume },
     { id: "github", label: dict.nav.github },
     { id: "contact", label: dict.nav.contact },
   ];
