@@ -85,7 +85,7 @@ Certifique-se de possuir o **Node.js (versão 18+)** e o **npm** (ou yarn) insta
 
 ### 2. Clonar o Repositório
 ```bash
-git clone https://github.com/lisboainformatica/portifolio.git
+git clone https://github.com/vinicius-andrade-dev/portifolio.git
 cd portifolio
 ```
 
@@ -129,4 +129,4 @@ npm run start
 
 ## 📄 Licença
 
-Este projeto é de uso pessoal para demonstração de portfólio profissional. Fique à vontade para usá-lo como inspiração de design e arquitetura de software!
+Este projeto é de uso pessoal para demonstração de portfólio profissional. Os projetos e links exibidos devem ser conferidos nos repositórios correspondentes; as descrições não implicam que todos estejam implantados em produção. Fique à vontade para usá-lo como inspiração de design e arquitetura de software!
