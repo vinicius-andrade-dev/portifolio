@@ -139,12 +139,12 @@ export async function GET() {
           url: "https://github.com/vinicius-andrade-dev/warehouse-mvp",
         },
         {
-          name: "api-rest-node",
-          description: "API REST baseada em Express, MongoDB e documentada no Swagger.",
-          stars: 2,
-          forks: 1,
-          language: "TypeScript",
-          url: "https://github.com/vinicius-andrade-dev",
+          name: "jitterbit-order-api",
+          description: "API REST com Node.js, Express, MongoDB, autenticação JWT e documentação Swagger.",
+          stars: 0,
+          forks: 0,
+          language: "JavaScript",
+          url: "https://github.com/vinicius-andrade-dev/jitterbit-order-api",
         },
       ],
     });
