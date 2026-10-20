@@ -1,111 +1,66 @@
 /**
- * Setor / Seção: Habilidades (Skills)
- * Exibe as competências técnicas do profissional organizadas por categorias
- * (Frontend, Backend, Banco de Dados, Nuvem e DevOps), com níveis de proficiência
- * representados por barras de progresso animadas.
+ * Seção de tecnologias: apresenta as stacks utilizadas nos projetos públicos
+ * e estudos práticos, organizadas por área. As tags indicam uso em projetos,
+ * não uma classificação subjetiva de proficiência.
  */
 "use client";
 
 import { motion } from "framer-motion";
+import { Code2, Server, Database, Cloud, Wrench } from "lucide-react";
 import { useLocale } from "@/hooks/useLocale";
 import { Card, CardContent } from "@/components/ui/Card";
 
-interface SkillItem {
-  name: string;
-  level: number; // 0 to 100
-}
-
-interface SkillCategory {
+interface StackCategory {
   key: string;
   title: string;
-  skills: SkillItem[];
+  icon: React.ReactNode;
+  technologies: string[];
 }
 
 export function Skills() {
   const { dict } = useLocale();
 
-  const skillCategories: SkillCategory[] = [
+  const stackCategories: StackCategory[] = [
     {
       key: "frontend",
       title: dict.skills.categories.frontend,
-      skills: [
-        { name: "JavaScript / ES6+", level: 90 },
-        { name: "TypeScript", level: 90 },
-        { name: "React 19", level: 95 },
-        { name: "Next.js 16 (App Router)", level: 90 },
-        { name: "Tailwind CSS v4", level: 95 },
-        { name: "HTML5 / CSS3", level: 95 },
-      ],
+      icon: <Code2 className="w-5 h-5" />,
+      technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Angular", "HTML5", "CSS3", "Tailwind CSS", "shadcn/ui", "TanStack Query", "Recharts"],
     },
     {
       key: "backend",
       title: dict.skills.categories.backend,
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "NestJS", level: 75 },
-        { name: "Express", level: 85 },
-        { name: "REST APIs / Swagger", level: 90 },
-        { name: "Prisma ORM", level: 85 },
-        { name: "JWT Autenticação / RBAC", level: 85 },
-      ],
+      icon: <Server className="w-5 h-5" />,
+      technologies: ["Node.js", "Express", "NestJS", "Java 21", "Spring Boot", "Python", "APIs REST", "JWT", "RBAC", "Swagger / OpenAPI", "Joi", "Zod"],
     },
     {
       key: "database",
       title: dict.skills.categories.database,
-      skills: [
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 80 },
-        { name: "Redis Caching", level: 70 },
-      ],
+      icon: <Database className="w-5 h-5" />,
+      technologies: ["PostgreSQL", "MySQL", "MongoDB", "SQLite", "Prisma ORM", "Mongoose", "Knex.js", "Flyway", "Redis"],
     },
     {
       key: "cloud",
       title: dict.skills.categories.cloud,
-      skills: [
-        { name: "AWS (S3, EC2, RDS, Lambda)", level: 70 },
-        { name: "Microsoft Azure", level: 65 },
-        { name: "Google Cloud Platform", level: 65 },
-        { name: "Vercel Deployments", level: 95 },
-      ],
+      icon: <Cloud className="w-5 h-5" />,
+      technologies: ["Vercel", "Microsoft Azure (estudos)", "AWS (estudos)"],
     },
     {
       key: "devops",
       title: dict.skills.categories.devops,
-      skills: [
-        { name: "Docker Conteinerização", level: 75 },
-        { name: "Git / GitHub Actions", level: 85 },
-      ],
+      icon: <Wrench className="w-5 h-5" />,
+      technologies: ["Git", "GitHub", "Docker", "Docker Compose", "Nginx", "Linux / redes", "Pino (logging)", "Testes automatizados"],
     },
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring" as const, stiffness: 100, damping: 20 },
-    },
-  };
 
   return (
     <section
       id="skills"
       className="py-24 relative overflow-hidden bg-white dark:bg-[#030303] transition-colors"
     >
-      {/* Efeito de brilho de fundo */}
       <div className="absolute top-1/4 right-0 w-[450px] h-[450px] rounded-full bg-cyan-500/5 dark:bg-cyan-500/2 glow-orb pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -125,60 +80,46 @@ export function Skills() {
           >
             {dict.skills.subtitle}
           </motion.h3>
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Tecnologias e ferramentas presentes nos projetos do portfólio. Algumas estão em uso prático e outras em fase de estudo.
+          </p>
         </div>
 
-        {/* Grade/Grid de Habilidades (Skills) */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {skillCategories.map((category) => (
-            <motion.div variants={cardVariants} key={category.key} className="h-full">
-              <Card hoverEffect glass className="h-full border-zinc-200/80 dark:border-zinc-800/60 flex flex-col">
-                <CardContent className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    {/* Título da Categoria */}
-                    <h4 className="text-md font-bold text-zinc-900 dark:text-white mb-6 uppercase tracking-wider border-b border-zinc-100 dark:border-zinc-800/60 pb-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {stackCategories.map((category, index) => (
+            <motion.div
+              key={category.key}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.07 }}
+              className="h-full"
+            >
+              <Card hoverEffect glass className="h-full border-zinc-200/80 dark:border-zinc-800/60">
+                <CardContent className="p-6 h-full">
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="flex items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-cyan-400 p-2.5">
+                      {category.icon}
+                    </span>
+                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
                       {category.title}
                     </h4>
-                    
-                    {/* Lista de Habilidades */}
-                    <div className="space-y-5">
-                      {category.skills.map((skill) => (
-                        <div key={skill.name} className="space-y-1.5">
-                          <div className="flex justify-between items-center text-xs">
-                            <span className="font-semibold text-zinc-700 dark:text-zinc-300">
-                              {skill.name}
-                            </span>
-                            <span className="font-semibold text-zinc-500 dark:text-zinc-500">
-                              {skill.level}%
-                            </span>
-                          </div>
-
-                          {/* Trilha de Progresso */}
-                          <div className="w-full h-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 overflow-hidden border border-zinc-200/10 dark:border-zinc-800/30">
-                            {/* Barra de progresso animada */}
-                            <motion.div
-                              initial={{ width: 0 }}
-                              whileInView={{ width: `${skill.level}%` }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
-                              className="h-full rounded-full bg-linear-to-r from-violet-600 to-indigo-500 dark:from-violet-500 dark:to-cyan-400"
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.technologies.map((technology) => (
+                      <span
+                        key={technology}
+                        className="rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-xs font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/70 dark:text-zinc-300"
+                      >
+                        {technology}
+                      </span>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );
