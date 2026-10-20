@@ -159,7 +159,7 @@ export function Hero() {
               className="flex items-center gap-4 mt-8 pt-8 border-t border-zinc-100 dark:border-zinc-900 w-full justify-center lg:justify-start"
             >
               <a
-                href="https://github.com/lisboainformatica"
+                href="https://github.com/vinicius-andrade-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-full"
