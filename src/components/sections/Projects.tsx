@@ -427,7 +427,24 @@ export function Projects() {
                     </div>
 
                     {/* Lado Direito do Projeto: Representação Vetorial / Simulador de Tela */}
-                    <div className="lg:col-span-5 bg-zinc-100 dark:bg-zinc-900/30 p-6 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-zinc-200 dark:border-zinc-800">
+                    <div className="lg:col-span-5 bg-zinc-100 dark:bg-zinc-900/30 p-6 flex flex-col items-center justify-center gap-4 border-t lg:border-t-0 lg:border-l border-zinc-200 dark:border-zinc-800">
+                      {/* Identidade visual clicável: cada projeto aponta para seu repositório real. */}
+                      <a
+                        href={projectLinks[project.id].code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Abrir repositório GitHub de ${project.name}`}
+                        className="group w-full max-w-sm rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-5 flex items-center gap-4 transition-transform hover:-translate-y-1"
+                      >
+                        <span className="flex shrink-0 items-center justify-center w-16 h-16 rounded-xl bg-zinc-950 text-white dark:bg-white dark:text-zinc-950">
+                          <GithubIcon className="w-10 h-10" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className="block text-xs uppercase tracking-widest font-semibold text-zinc-500 dark:text-zinc-400 mb-1">Projeto no GitHub</span>
+                          <span className="block font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-cyan-400">{project.name}</span>
+                          <span className="block text-xs text-zinc-500 dark:text-zinc-500 mt-1">Ver código-fonte <span aria-hidden="true">↗</span></span>
+                        </span>
+                      </a>
                       <div className="w-full max-w-sm">
                         {renderVisualMockup(project.id)}
                       </div>
