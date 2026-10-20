@@ -35,62 +35,27 @@ export function Projects() {
 
   // Mapeamento de tecnologias para cada ID de projeto (usado nas badges)
   const projectTechs: Record<string, string[]> = {
-    protocolo360: [
-      "NestJS",
-      "Next.js 15",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma ORM",
-      "Redis",
-      "Docker",
-      "JWT",
-      "RBAC",
-      "Multi-Tenant",
-      "AsyncLocalStorage",
-      "TanStack Query",
-      "Tailwind CSS",
-      "Shadcn/UI",
-    ],
-    ubs: [
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Prisma",
-      "Docker",
-      "Redis",
-      "JWT",
-      "Tailwind CSS",
-      "RBAC",
-      "Multi-Tenant",
-      "LGPD",
-    ],
-    warehouse: [
-      "Next.js",
-      "Node.js",
-      "MongoDB",
-      "JWT",
-      "Tailwind CSS",
-      "Recharts",
-      "Dashboard",
-    ],
+    "agendaubs": ["Java 21", "Spring Boot", "Angular", "PostgreSQL", "Flyway", "Docker"],
+    "pix-simulator": ["NestJS", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Docker", "Nginx"],
+    "ultimate-saas-api": ["Node.js", "Express", "MySQL", "Knex", "Redis", "JWT", "Docker", "Pino"],
+    "securehub": ["Python", "Java", "SQLite", "Security", "Network Scripts"],
+    "jitterbit-api": ["Node.js", "Express", "MongoDB", "Mongoose", "JWT", "Joi", "Swagger"],
+    protocolo360: ["NestJS", "Next.js", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Docker", "JWT", "RBAC"],
+    ubs: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Docker", "Redis", "JWT", "RBAC", "LGPD"],
+    warehouse: ["Next.js", "React", "TypeScript", "MongoDB", "Mongoose", "NextAuth", "Zod", "Recharts"],
     "api-rest": ["Node.js", "Express", "Swagger", "MongoDB", "Mongoose", "JWT", "TypeScript"],
   };
 
   const projectLinks: Record<string, { demo?: string; code: string }> = {
-    protocolo360: {
-      code: "https://github.com/lisboainformatica/protocolo360",
-    },
-    ubs: {
-      code: "https://github.com/lisboainformatica/ubs",
-    },
-    warehouse: {
-      demo: "https://almoxarifadolisboa.vercel.app",
-      code: "https://github.com/lisboainformatica/warehouse-mvp",
-    },
-    "api-rest": {
-      code: "https://github.com/lisboainformatica", // busca automática ou perfil
-    },
+    "agendaubs": { code: "https://github.com/vinicius-andrade-dev/AgendaUBS" },
+    "pix-simulator": { code: "https://github.com/vinicius-andrade-dev/pix" },
+    "ultimate-saas-api": { code: "https://github.com/vinicius-andrade-dev/Ultimate-SaaS-API" },
+    "securehub": { code: "https://github.com/vinicius-andrade-dev/secure_hub_project" },
+    "jitterbit-api": { code: "https://github.com/vinicius-andrade-dev/jitterbit-order-api" },
+    protocolo360: { code: "https://github.com/vinicius-andrade-dev/protocolo360" },
+    ubs: { code: "https://github.com/vinicius-andrade-dev/ubs" },
+    warehouse: { code: "https://github.com/vinicius-andrade-dev/warehouse-mvp" },
+    "api-rest": { code: "https://github.com/vinicius-andrade-dev/jitterbit-order-api" },
   };
 
   const renderVisualMockup = (id: string) => {
@@ -233,9 +198,7 @@ export function Projects() {
                 </div>
               </div>
               
-              <div className="mt-1 text-[9px] bg-zinc-900/60 p-2 rounded-md border border-zinc-800/40 text-center">
-                <span>Credenciais Teste: <b className="text-zinc-200">teste@teste.com / 123456</b></span>
-              </div>
+              <div className="mt-1 text-[9px] bg-zinc-900/60 p-2 rounded-md border border-zinc-800/40 text-center"><span>DEMONSTRAÇÃO DE CONTROLE DE ESTOQUE</span></div>
             </div>
           </div>
         );
