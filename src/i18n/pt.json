@@ -7,7 +7,8 @@
     "experience": "Experiência",
     "certifications": "Certificados",
     "github": "GitHub",
-    "contact": "Contato"
+    "contact": "Contato",
+    "resume": "Currículo"
   },
   "hero": {
     "greeting": "Olá, meu nome é",
@@ -322,5 +323,19 @@
       "email": "Por favor, insira um e-mail válido.",
       "message": "A mensagem deve conter pelo menos 10 caracteres."
     }
+  },
+  "resume": {
+    "title": "Currículo profissional",
+    "subtitle": "Escolha a versão mais adequada à oportunidade.",
+    "fullStack": "Desenvolvedor Full Stack Júnior",
+    "fullStackDescription": "Perfil abrangente com foco em desenvolvimento web, APIs, bancos de dados e integração entre front-end e back-end.",
+    "backEnd": "Desenvolvedor Back-end Júnior",
+    "backEndDescription": "Versão direcionada a APIs REST, Node.js, TypeScript, NestJS, autenticação, bancos de dados e regras de negócio.",
+    "download": "Baixar currículo PDF",
+    "viewOnline": "Visualizar currículo",
+    "preparing": "Versão específica em preparação",
+    "backEndProjects": "Ver projetos de back-end",
+    "format": "PDF · Compatível com ATS · Português",
+    "preparingNote": "A versão Back-end será disponibilizada assim que o currículo específico estiver finalizado."
   }
 }
