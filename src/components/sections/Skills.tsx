@@ -6,6 +6,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 import { Code2, Server, Database, Cloud, Wrench } from "lucide-react";
 import { useLocale } from "@/hooks/useLocale";
 import { Card, CardContent } from "@/components/ui/Card";
@@ -13,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/Card";
 interface StackCategory {
   key: string;
   title: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   technologies: string[];
 }
 
